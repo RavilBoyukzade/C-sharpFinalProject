@@ -69,5 +69,13 @@ namespace Library.Forms
 
             
         }
+
+        private void UserLoginForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Enter)
+            {
+                BtnLogIn_Click(BtnLogIn,null);
+            }
+        }
     }
 }
