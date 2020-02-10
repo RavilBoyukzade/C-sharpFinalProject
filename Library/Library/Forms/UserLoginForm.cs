@@ -53,7 +53,8 @@ namespace Library.Forms
 
             }
 
-           User user = _context.Users.FirstOrDefault(u => u.Status && u.Email == TxtEmail.Text && u.Password == TxtPassword.Text);
+           User user = _context.Users.FirstOrDefault
+                (u => u.Status && u.Email == TxtEmail.Text && u.Password == TxtPassword.Text);
 
             if(user!=null)
             {
