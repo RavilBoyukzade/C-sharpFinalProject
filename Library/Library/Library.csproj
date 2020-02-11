@@ -81,8 +81,13 @@
     <Compile Include="Migrations\202002071633567_ChangePasswordTypeFromIntToString.designer.cs">
       <DependentUpon>202002071633567_ChangePasswordTypeFromIntToString.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002111538483_AddForeignKeyCreateGenre.cs" />
+    <Compile Include="Migrations\202002111538483_AddForeignKeyCreateGenre.designer.cs">
+      <DependentUpon>202002111538483_AddForeignKeyCreateGenre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
@@ -101,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002071633567_ChangePasswordTypeFromIntToString.resx">
       <DependentUpon>202002071633567_ChangePasswordTypeFromIntToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002111538483_AddForeignKeyCreateGenre.resx">
+      <DependentUpon>202002111538483_AddForeignKeyCreateGenre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

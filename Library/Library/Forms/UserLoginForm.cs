@@ -60,8 +60,8 @@ namespace Library.Forms
             {
                 
                 DashboardForm dashboard = new DashboardForm();
-                dashboard.ShowDialog();
-                this.Close();
+                dashboard.Show();
+                this.Hide();
                                
                 return;
             }

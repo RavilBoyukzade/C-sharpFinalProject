@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Library.Data;
 using Library.Models;
 using System.Data.Entity;
+using System.Data.Sql;
 
 namespace Library.Forms
 {
@@ -17,6 +18,7 @@ namespace Library.Forms
     public partial class DashboardForm : Form
     {
         private readonly LibraryDbContext _context;
+        private User _selectedUser;
         public DashboardForm()
         {
             _context = new LibraryDbContext();
@@ -24,7 +26,7 @@ namespace Library.Forms
             InitializeComponent();
             FillUsers();
 
-
+            
 
         }
 
@@ -105,7 +107,30 @@ namespace Library.Forms
             }
         } //User search method
 
-                                               
+        private void DgvAddUsers_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int id = Convert.ToInt32(DgvAddUsers.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+            _selectedUser = _context.Users.Find(id);
+
+
+            BtnDelete.Show();
+           
+
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Əminsinizmi.?", "Silməyə", MessageBoxButtons.YesNo);
+            if (r == DialogResult.Yes)
+            {
+                _context.Users.Remove(_selectedUser);
+                _context.SaveChanges();
+                DgvAddUsers.Rows.Clear();
+                FillUsers();
+            }
+           
         }
     }
+}
 

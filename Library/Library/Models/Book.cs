@@ -15,15 +15,19 @@ namespace Library.Models
         [Required]
         [MaxLength(100)]
         public string BookName { get; set; }
+
         [Required]
         [MaxLength(50)]
         public string AuthorFullName { get; set; }
+
         [Column(TypeName ="date")]
         public DateTime? WriteDate { get; set; }
+
         [Required]
-        [MaxLength(50)]
-        public string Genre { get; set; }
+        public int GenreId { get; set; }
 
         public int Count { get; set; }
+
+        public Genre Genre { get; set; }
     }
 }

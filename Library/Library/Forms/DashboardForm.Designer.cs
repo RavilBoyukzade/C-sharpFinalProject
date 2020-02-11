@@ -39,15 +39,10 @@
             this.müştəriniSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kitabıSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GrbAddUser = new System.Windows.Forms.GroupBox();
+            this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnSearchUser = new System.Windows.Forms.Button();
             this.BtnAddUser = new System.Windows.Forms.Button();
             this.DgvAddUsers = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.TxtUserPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +51,12 @@
             this.TxtUserSurname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtUserName = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.GrbAddUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAddUsers)).BeginInit();
@@ -139,6 +140,7 @@
             // 
             // GrbAddUser
             // 
+            this.GrbAddUser.Controls.Add(this.BtnDelete);
             this.GrbAddUser.Controls.Add(this.BtnSearchUser);
             this.GrbAddUser.Controls.Add(this.BtnAddUser);
             this.GrbAddUser.Controls.Add(this.DgvAddUsers);
@@ -158,6 +160,17 @@
             this.GrbAddUser.TabStop = false;
             this.GrbAddUser.Text = "Yeni İstifadəçi";
             this.GrbAddUser.Visible = false;
+            // 
+            // BtnDelete
+            // 
+            this.BtnDelete.Location = new System.Drawing.Point(31, 320);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(162, 32);
+            this.BtnDelete.TabIndex = 15;
+            this.BtnDelete.Text = "Sil";
+            this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Visible = false;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnSearchUser
             // 
@@ -194,39 +207,10 @@
             this.Column6});
             this.DgvAddUsers.Location = new System.Drawing.Point(235, 20);
             this.DgvAddUsers.Name = "DgvAddUsers";
+            this.DgvAddUsers.ReadOnly = true;
             this.DgvAddUsers.Size = new System.Drawing.Size(528, 332);
             this.DgvAddUsers.TabIndex = 12;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Id";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Adı";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Soyadı";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "E-poçt";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Parol";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Vəzifəsi";
-            this.Column6.Name = "Column6";
+            this.DgvAddUsers.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvAddUsers_RowHeaderMouseClick);
             // 
             // label5
             // 
@@ -292,6 +276,42 @@
             this.TxtUserName.Size = new System.Drawing.Size(162, 20);
             this.TxtUserName.TabIndex = 0;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Id";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Adı";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Soyadı";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "E-poçt";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Parol";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Vəzifəsi";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,12 +348,6 @@
         private System.Windows.Forms.Button BtnSearchUser;
         private System.Windows.Forms.Button BtnAddUser;
         private System.Windows.Forms.DataGridView DgvAddUsers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TxtUserPassword;
         private System.Windows.Forms.Label label3;
@@ -342,5 +356,12 @@
         private System.Windows.Forms.TextBox TxtUserSurname;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtUserName;
+        private System.Windows.Forms.Button BtnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
