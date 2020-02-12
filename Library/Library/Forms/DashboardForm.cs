@@ -24,113 +24,131 @@ namespace Library.Forms
             _context = new LibraryDbContext();
 
             InitializeComponent();
-            FillUsers();
+            //FillUsers();
 
-            
+
 
         }
 
-        private void istifadəçiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GrbAddUser.Show();
+        //private void istifadəçiToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //   panel1.Show();
            
-        }
+        //}
 
        
 
-        private void FillUsers()
-        {
-            var ShowUser = _context.Users.ToList();
-            foreach (var item in ShowUser)
-            {
-                DgvAddUsers.Rows.Add(item.Id,
-                                     item.Name,
-                                     item.Surname,
-                                     item.Email,
-                                     item.Password,
-                                     item.Level);
-            }
-        }
+        //private void FillUsers()
+        //{
+        //    var ShowUser = _context.Users.ToList();
+        //    foreach (var item in ShowUser)
+        //    {
+        //        DgvAddUsers.Rows.Add(item.Id,
+        //                             item.Name,
+        //                             item.Surname,
+        //                             item.Email,
+        //                             item.Password,
+        //                             item.Level);
+        //    }
+        //}
 
-        private void BtnAddUser_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(TxtUserName.Text) ||
-               !string.IsNullOrEmpty(TxtUserSurname.Text) ||
-               !string.IsNullOrEmpty(TxtUserMail.Text) ||
-               !string.IsNullOrEmpty(TxtUserPassword.Text))
-            {
+        //private void BtnAddUser_Click(object sender, EventArgs e)
+        //{
+        //    if (!string.IsNullOrEmpty(TxtUserName.Text) ||
+        //       !string.IsNullOrEmpty(TxtUserSurname.Text) ||
+        //       !string.IsNullOrEmpty(TxtUserMail.Text) ||
+        //       !string.IsNullOrEmpty(TxtUserPassword.Text))
+        //    {
 
-                User user = new User//add user to database
-                {
-                    Name = TxtUserName.Text,
-                    Surname = TxtUserSurname.Text,
-                    Email = TxtUserMail.Text,
-                    Password = TxtUserPassword.Text,
-                    Level = UserLevel.Moderator,
-                    Status = true
+        //        User user = new User//add user to database
+        //        {
+        //            Name = TxtUserName.Text,
+        //            Surname = TxtUserSurname.Text,
+        //            Email = TxtUserMail.Text,
+        //            Password = TxtUserPassword.Text,
+        //            Level = UserLevel.Moderator,
+        //            Status = true
                     
-                };
-                _context.Users.Add(user);
-                _context.SaveChanges();
-            }
-            else { 
-                MessageBox.Show("doldur");
-            }
-            DgvAddUsers.Rows.Clear();
-            FillUsers();
+        //        };
+        //        _context.Users.Add(user);
+        //        _context.SaveChanges();
+        //    }
+        //    else { 
+        //        MessageBox.Show("doldur");
+        //    }
+        //    DgvAddUsers.Rows.Clear();
+        //    FillUsers();
 
-        }//User create method
+        //}//User create method
 
-        private void BtnSearchUser_Click(object sender, EventArgs e)
-        {
-           if(string.IsNullOrEmpty(TxtUserName.Text) &&
-              string.IsNullOrEmpty(TxtUserSurname.Text))
-            {
-                MessageBox.Show("Ya Adını, ya da Soyadını daxil edin");
-                return;
-            }
-            var user = _context.Users
-                                     .Where(u => u.Status && (TxtUserName.Text != string.Empty ? u.Name.Contains(TxtUserName.Text) : false) ||
-                                                             (TxtUserSurname.Text != string.Empty ? u.Surname.Contains(TxtUserSurname.Text) : false))
-                                     .ToList();
-            DgvAddUsers.Rows.Clear();
+        //private void BtnSearchUser_Click(object sender, EventArgs e)
+        //{
+        //   if(string.IsNullOrEmpty(TxtUserName.Text) &&
+        //      string.IsNullOrEmpty(TxtUserSurname.Text))
+        //    {
+        //        MessageBox.Show("Ya Adını, ya da Soyadını daxil edin");
+        //        return;
+        //    }
+        //    var user = _context.Users
+        //                             .Where(u => u.Status && (TxtUserName.Text != string.Empty ? u.Name.Contains(TxtUserName.Text) : false) ||
+        //                                                     (TxtUserSurname.Text != string.Empty ? u.Surname.Contains(TxtUserSurname.Text) : false))
+        //                             .ToList();
+        //    DgvAddUsers.Rows.Clear();
 
-            foreach (var item in user)
-            {
-                DgvAddUsers.Rows.Add(item.Id,
-                                         item.Name,
-                                         item.Surname,
-                                         item.Email,
-                                         item.Password,
-                                         item.Level
-                                         );
-            }
-        } //User search method
+        //    foreach (var item in user)
+        //    {
+        //        DgvAddUsers.Rows.Add(item.Id,
+        //                                 item.Name,
+        //                                 item.Surname,
+        //                                 item.Email,
+        //                                 item.Password,
+        //                                 item.Level
+        //                                 );
+        //    }
+        //} //User search method
 
-        private void DgvAddUsers_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            int id = Convert.ToInt32(DgvAddUsers.Rows[e.RowIndex].Cells[0].Value.ToString());
+        //private void DgvAddUsers_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        //{
+        //    int id = Convert.ToInt32(DgvAddUsers.Rows[e.RowIndex].Cells[0].Value.ToString());
 
-            _selectedUser = _context.Users.Find(id);
+        //    _selectedUser = _context.Users.Find(id);
+        //    TxtUserName.Text = _selectedUser.Name;
+        //    TxtUserSurname.Text = _selectedUser.Surname;
+        //    TxtUserMail.Text = _selectedUser.Email;
+        //    TxtUserPassword.Text = _selectedUser.Password;
 
 
-            BtnDelete.Show();
+        //    BtnDelete.Show();
+        //    BtnUpdate.Show();
            
 
-        }
+        //}
 
-        private void BtnDelete_Click(object sender, EventArgs e)
-        {
-            DialogResult r = MessageBox.Show("Əminsinizmi.?", "Silməyə", MessageBoxButtons.YesNo);
-            if (r == DialogResult.Yes)
-            {
-                _context.Users.Remove(_selectedUser);
-                _context.SaveChanges();
-                DgvAddUsers.Rows.Clear();
-                FillUsers();
-            }
+        //private void BtnDelete_Click(object sender, EventArgs e)
+        //{
+        //    DialogResult r = MessageBox.Show("Əminsinizmi?", "Silməyə", MessageBoxButtons.YesNo);
+        //    if (r == DialogResult.Yes)
+        //    {
+        //        _context.Users.Remove(_selectedUser);
+        //        _context.SaveChanges();
+        //        DgvAddUsers.Rows.Clear();
+        //        FillUsers();
+        //    }
            
-        }
+        //}
+
+        //private void BtnUpdate_Click(object sender, EventArgs e)
+        //{
+        //    DialogResult u = MessageBox.Show("Əminsinizmi?", "Dəyişiklik et?",MessageBoxButtons.YesNo);
+
+        //    if( u == DialogResult.Yes)
+        //    {
+                
+                
+
+
+        //    }
+        //}
     }
 }
 
