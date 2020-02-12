@@ -7,13 +7,13 @@ namespace Library.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class AddUserForm : IMigrationMetadata
+    public sealed partial class ChangeForeignKeyViaBookAndGenre : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddUserForm));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeForeignKeyViaBookAndGenre));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002120841595_AddUserForm"; }
+            get { return "202002121610062_ChangeForeignKeyViaBookAndGenre"; }
         }
         
         string IMigrationMetadata.Source

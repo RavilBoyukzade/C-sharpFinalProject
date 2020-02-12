@@ -57,11 +57,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\LibraryDbContext.cs" />
+    <Compile Include="Forms\BookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BookForm.Designer.cs">
+      <DependentUpon>BookForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PersonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PersonForm.Designer.cs">
+      <DependentUpon>PersonForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserForm.cs">
       <SubType>Form</SubType>
@@ -75,25 +87,25 @@
     <Compile Include="Forms\UserLoginForm.Designer.cs">
       <DependentUpon>UserLoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002071332105_UserAndPersonAndBookCreated.cs" />
-    <Compile Include="Migrations\202002071332105_UserAndPersonAndBookCreated.designer.cs">
-      <DependentUpon>202002071332105_UserAndPersonAndBookCreated.cs</DependentUpon>
+    <Compile Include="Migrations\202002121406402_CreateBookAndGenreAndPersonAndUserModels.cs" />
+    <Compile Include="Migrations\202002121406402_CreateBookAndGenreAndPersonAndUserModels.designer.cs">
+      <DependentUpon>202002121406402_CreateBookAndGenreAndPersonAndUserModels.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002071626490_UserAndPersonAndBookDataAnnontionsAdd.cs" />
-    <Compile Include="Migrations\202002071626490_UserAndPersonAndBookDataAnnontionsAdd.designer.cs">
-      <DependentUpon>202002071626490_UserAndPersonAndBookDataAnnontionsAdd.cs</DependentUpon>
+    <Compile Include="Migrations\202002121605020_AddForeignKeyToBookGenreİd.cs" />
+    <Compile Include="Migrations\202002121605020_AddForeignKeyToBookGenreİd.designer.cs">
+      <DependentUpon>202002121605020_AddForeignKeyToBookGenreİd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002071633567_ChangePasswordTypeFromIntToString.cs" />
-    <Compile Include="Migrations\202002071633567_ChangePasswordTypeFromIntToString.designer.cs">
-      <DependentUpon>202002071633567_ChangePasswordTypeFromIntToString.cs</DependentUpon>
+    <Compile Include="Migrations\202002121610062_ChangeForeignKeyViaBookAndGenre.cs" />
+    <Compile Include="Migrations\202002121610062_ChangeForeignKeyViaBookAndGenre.designer.cs">
+      <DependentUpon>202002121610062_ChangeForeignKeyViaBookAndGenre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002111538483_AddForeignKeyCreateGenre.cs" />
-    <Compile Include="Migrations\202002111538483_AddForeignKeyCreateGenre.designer.cs">
-      <DependentUpon>202002111538483_AddForeignKeyCreateGenre.cs</DependentUpon>
+    <Compile Include="Migrations\202002121949149_AddPriceColumnToBookTable.cs" />
+    <Compile Include="Migrations\202002121949149_AddPriceColumnToBookTable.designer.cs">
+      <DependentUpon>202002121949149_AddPriceColumnToBookTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002120841595_AddUserForm.cs" />
-    <Compile Include="Migrations\202002120841595_AddUserForm.designer.cs">
-      <DependentUpon>202002120841595_AddUserForm.cs</DependentUpon>
+    <Compile Include="Migrations\202002121951135_AddRequiredToPriceIntoBookTable.cs" />
+    <Compile Include="Migrations\202002121951135_AddRequiredToPriceIntoBookTable.designer.cs">
+      <DependentUpon>202002121951135_AddRequiredToPriceIntoBookTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
@@ -102,8 +114,14 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\BookForm.resx">
+      <DependentUpon>BookForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PersonForm.resx">
+      <DependentUpon>PersonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
@@ -111,20 +129,20 @@
     <EmbeddedResource Include="Forms\UserLoginForm.resx">
       <DependentUpon>UserLoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071332105_UserAndPersonAndBookCreated.resx">
-      <DependentUpon>202002071332105_UserAndPersonAndBookCreated.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002121406402_CreateBookAndGenreAndPersonAndUserModels.resx">
+      <DependentUpon>202002121406402_CreateBookAndGenreAndPersonAndUserModels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071626490_UserAndPersonAndBookDataAnnontionsAdd.resx">
-      <DependentUpon>202002071626490_UserAndPersonAndBookDataAnnontionsAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002121605020_AddForeignKeyToBookGenreİd.resx">
+      <DependentUpon>202002121605020_AddForeignKeyToBookGenreİd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002071633567_ChangePasswordTypeFromIntToString.resx">
-      <DependentUpon>202002071633567_ChangePasswordTypeFromIntToString.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002121610062_ChangeForeignKeyViaBookAndGenre.resx">
+      <DependentUpon>202002121610062_ChangeForeignKeyViaBookAndGenre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002111538483_AddForeignKeyCreateGenre.resx">
-      <DependentUpon>202002111538483_AddForeignKeyCreateGenre.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002121949149_AddPriceColumnToBookTable.resx">
+      <DependentUpon>202002121949149_AddPriceColumnToBookTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002120841595_AddUserForm.resx">
-      <DependentUpon>202002120841595_AddUserForm.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002121951135_AddRequiredToPriceIntoBookTable.resx">
+      <DependentUpon>202002121951135_AddRequiredToPriceIntoBookTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

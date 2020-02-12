@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddUserForm : DbMigration
+    public partial class ChangeForeignKeyViaBookAndGenre : DbMigration
     {
         public override void Up()
         {

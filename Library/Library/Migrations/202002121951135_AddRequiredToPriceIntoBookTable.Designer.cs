@@ -7,13 +7,13 @@ namespace Library.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class UserAndPersonAndBookCreated : IMigrationMetadata
+    public sealed partial class AddRequiredToPriceIntoBookTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UserAndPersonAndBookCreated));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddRequiredToPriceIntoBookTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002071332105_UserAndPersonAndBookCreated"; }
+            get { return "202002121951135_AddRequiredToPriceIntoBookTable"; }
         }
         
         string IMigrationMetadata.Source

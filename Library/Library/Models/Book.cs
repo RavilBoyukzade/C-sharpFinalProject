@@ -24,9 +24,12 @@ namespace Library.Models
         public DateTime? WriteDate { get; set; }
 
         [Required]
+        [ForeignKey("Genre")]
         public int GenreId { get; set; }
 
         public int Count { get; set; }
+        [Required]
+        public int Price { get; set; }
 
         public Genre Genre { get; set; }
     }

@@ -7,13 +7,13 @@ namespace Library.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class ChangePasswordTypeFromIntToString : IMigrationMetadata
+    public sealed partial class CreateBookAndGenreAndPersonAndUserModels : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangePasswordTypeFromIntToString));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateBookAndGenreAndPersonAndUserModels));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002071633567_ChangePasswordTypeFromIntToString"; }
+            get { return "202002121406402_CreateBookAndGenreAndPersonAndUserModels"; }
         }
         
         string IMigrationMetadata.Source

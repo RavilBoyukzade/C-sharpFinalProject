@@ -20,10 +20,7 @@ namespace Library.Forms
         
         public DashboardForm()
         {
-
             InitializeComponent();
-
-
 
         }
 
@@ -33,12 +30,22 @@ namespace Library.Forms
             UserForm uf = new UserForm();
             uf.TopLevel = false;
             PnlDashboard.Controls.Add(uf);
-            uf.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            uf.FormBorderStyle = FormBorderStyle.None;
             uf.Dock = DockStyle.Fill;
             uf.Show();
 
         }
 
+        private void kitabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PnlDashboard.Controls.Clear();           
+            BookForm bf = new BookForm();
+            bf.TopLevel = false;
+            PnlDashboard.Controls.Add(bf);
+            bf.FormBorderStyle = FormBorderStyle.None;
+            bf.Dock = DockStyle.Fill;
+            bf.Show();
+        }
     }
 }
 

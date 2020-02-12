@@ -7,13 +7,13 @@ namespace Library.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class AddForeignKeyCreateGenre : IMigrationMetadata
+    public sealed partial class AddPriceColumnToBookTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddForeignKeyCreateGenre));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddPriceColumnToBookTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002111538483_AddForeignKeyCreateGenre"; }
+            get { return "202002121949149_AddPriceColumnToBookTable"; }
         }
         
         string IMigrationMetadata.Source

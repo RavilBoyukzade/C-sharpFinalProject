@@ -21,18 +21,11 @@ namespace Library.Models
         public string Surname { get; set; }
         [Required]
         public int PhoneNumber { get; set; }
-
-        public int BookId { get; set; }
-
         [Required]
-        [MaxLength(20)]
-        public  string LibraryCode { get; set; }
-        [Column(TypeName ="date")]
-        public DateTime? ReciveDate { get; set; }
+        [MaxLength(50)]
+        public string Email { get; set; }
         [Column(TypeName = "date")]
-        public DateTime? DeadlineDate { get; set; }
+        public DateTime? Birthday { get; set; }
 
-        public int BookCount { get; set; }
-        
     }
 }
