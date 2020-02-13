@@ -116,7 +116,7 @@ namespace Library.Forms
         private void BtnUpdateBook_Click(object sender, EventArgs e)
         {
             ComboBoxItem select = CmbGenre.SelectedItem as ComboBoxItem;
-            DialogResult u = MessageBox.Show("Yeniəyim?", "Yenilə?", MessageBoxButtons.YesNo);
+            DialogResult u = MessageBox.Show("Yeniləyim?", "Yenilə?", MessageBoxButtons.YesNo);
             if (u == DialogResult.Yes)
             {
                 _selectedBook.BookName = TxtBookName.Text;

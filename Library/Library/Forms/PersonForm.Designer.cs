@@ -175,6 +175,7 @@
             this.BtnDelete.TabIndex = 11;
             this.BtnDelete.Text = "Sil";
             this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Visible = false;
             this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnUpdate
@@ -185,6 +186,8 @@
             this.BtnUpdate.TabIndex = 12;
             this.BtnUpdate.Text = "Yenilə";
             this.BtnUpdate.UseVisualStyleBackColor = true;
+            this.BtnUpdate.Visible = false;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // DgvPerson
             // 

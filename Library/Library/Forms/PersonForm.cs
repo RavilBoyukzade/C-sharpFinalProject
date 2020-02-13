@@ -80,7 +80,8 @@ namespace Library.Forms
             TxtPersonEmail.Text = _selectedPerson.Email;
             DtpBirthday.Text = _selectedPerson.Birthday.ToString();
 
-
+            BtnDelete.Show();
+            BtnUpdate.Show();
 
         }
 
@@ -97,6 +98,25 @@ namespace Library.Forms
             Reset();
         }
 
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            DialogResult u = MessageBox.Show("Yeniləyim ? ", "Yenilə ? ", MessageBoxButtons.YesNo);
+            if (u == DialogResult.Yes)
+            {
+                _selectedPerson.Name = TxtPersonName.Text;
+                _selectedPerson.Surname = TxtPersonSurname.Text;
+                _selectedPerson.PhoneNumber = Convert.ToInt32(TxtPersonPhone.Text);
+                _selectedPerson.Email = TxtPersonEmail.Text;
+                _selectedPerson.Birthday = DtpBirthday.Value;
+
+                _context.SaveChanges();
+                DgvPerson.Rows.Clear();
+                FillPerson();
+            }
+
+            Reset();
+        }
+
         private void Reset()
         {
             _selectedPerson = null;
@@ -105,6 +125,11 @@ namespace Library.Forms
             TxtPersonPhone.Text = "";
             TxtPersonEmail.Text ="";
             DtpBirthday.Text = "";
+
+            BtnDelete.Hide();
+            BtnUpdate.Hide();
         }
+
+       
     }
 }
