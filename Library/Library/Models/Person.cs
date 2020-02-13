@@ -27,5 +27,7 @@ namespace Library.Models
         [Column(TypeName = "date")]
         public DateTime? Birthday { get; set; }
 
+        public List<Order> Orders { get; set; }
+
     }
 }

@@ -107,9 +107,14 @@
     <Compile Include="Migrations\202002121951135_AddRequiredToPriceIntoBookTable.designer.cs">
       <DependentUpon>202002121951135_AddRequiredToPriceIntoBookTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002131514319_AddOrderTableAndInsertTypesInIt.cs" />
+    <Compile Include="Migrations\202002131514319_AddOrderTableAndInsertTypesInIt.designer.cs">
+      <DependentUpon>202002131514319_AddOrderTableAndInsertTypesInIt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
@@ -143,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002121951135_AddRequiredToPriceIntoBookTable.resx">
       <DependentUpon>202002121951135_AddRequiredToPriceIntoBookTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002131514319_AddOrderTableAndInsertTypesInIt.resx">
+      <DependentUpon>202002131514319_AddOrderTableAndInsertTypesInIt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

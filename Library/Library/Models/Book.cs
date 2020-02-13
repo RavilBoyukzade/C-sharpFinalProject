@@ -32,5 +32,7 @@ namespace Library.Models
         public int Price { get; set; }
 
         public Genre Genre { get; set; }
+
+        public List<Order> Orders { get; set; }
     }
 }
