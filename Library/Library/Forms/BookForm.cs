@@ -28,9 +28,10 @@ namespace Library.Forms
         private void FillBooks()
         {
             var ShowBooks = _context.Books.Include("Genre").ToList();
+
             foreach (var item in ShowBooks)
             {
-                DgvBookAdd.Rows.Add(item.Id,
+                 DgvBookAdd.Rows.Add(item.Id,
                                     item.BookName,
                                     item.AuthorFullName,
                                     item.WriteDate,
@@ -53,8 +54,8 @@ namespace Library.Forms
         }
 
         private void BtnAddBook_Click(object sender, EventArgs e)
-        {
-                ComboBoxItem select = CmbGenre.SelectedItem as ComboBoxItem;
+        {            
+            ComboBoxItem select = CmbGenre.SelectedItem as ComboBoxItem;
 
             if (!string.IsNullOrEmpty(TxtBookName.Text) &&
                 !string.IsNullOrEmpty(TxtBookAuthorFullName.Text))
@@ -71,7 +72,8 @@ namespace Library.Forms
                 };
                 _context.Books.Add(book);
                 _context.SaveChanges();
-             }else
+             }
+            else
                 {
                     MessageBox.Show("xanalari doldur");
                 }
@@ -117,12 +119,6 @@ namespace Library.Forms
             DialogResult u = MessageBox.Show("Yeniəyim?", "Yenilə?", MessageBoxButtons.YesNo);
             if (u == DialogResult.Yes)
             {
-                //TxtBookName.Text = _selectedBook.BookName;
-                //TxtBookAuthorFullName.Text = _selectedBook.AuthorFullName;
-                //TxtCount.Text = _selectedBook.Count.ToString();
-                //TxtBookPrice.Text = _selectedBook.Price.ToString();
-                //DtpWriteDate.Text = _selectedBook.WriteDate.ToString();
-                //CmbGenre.Text = _selectedBook.Genre.Name;
                 _selectedBook.BookName = TxtBookName.Text;
                 _selectedBook.AuthorFullName = TxtBookAuthorFullName.Text;
                 _selectedBook.Count = Convert.ToInt32(TxtCount.Text);

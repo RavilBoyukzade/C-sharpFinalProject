@@ -38,6 +38,7 @@
             this.müştəriniSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kitabıSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PnlDashboard = new System.Windows.Forms.Panel();
+            this.müştəriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +65,8 @@
             // 
             this.yeniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.istifadəçiToolStripMenuItem,
-            this.kitabToolStripMenuItem});
+            this.kitabToolStripMenuItem,
+            this.müştəriToolStripMenuItem});
             this.yeniToolStripMenuItem.Name = "yeniToolStripMenuItem";
             this.yeniToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.yeniToolStripMenuItem.Text = "Yeni";
@@ -96,19 +98,19 @@
             // istifadeçiniSilToolStripMenuItem
             // 
             this.istifadeçiniSilToolStripMenuItem.Name = "istifadeçiniSilToolStripMenuItem";
-            this.istifadeçiniSilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.istifadeçiniSilToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.istifadeçiniSilToolStripMenuItem.Text = "İstifadeçini sil";
             // 
             // müştəriniSilToolStripMenuItem
             // 
             this.müştəriniSilToolStripMenuItem.Name = "müştəriniSilToolStripMenuItem";
-            this.müştəriniSilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.müştəriniSilToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.müştəriniSilToolStripMenuItem.Text = "Müştərini sil";
             // 
             // kitabıSilToolStripMenuItem
             // 
             this.kitabıSilToolStripMenuItem.Name = "kitabıSilToolStripMenuItem";
-            this.kitabıSilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kitabıSilToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.kitabıSilToolStripMenuItem.Text = "Kitabı sil";
             // 
             // PnlDashboard
@@ -118,6 +120,13 @@
             this.PnlDashboard.Name = "PnlDashboard";
             this.PnlDashboard.Size = new System.Drawing.Size(793, 470);
             this.PnlDashboard.TabIndex = 1;
+            // 
+            // müştəriToolStripMenuItem
+            // 
+            this.müştəriToolStripMenuItem.Name = "müştəriToolStripMenuItem";
+            this.müştəriToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.müştəriToolStripMenuItem.Text = "Müştəri";
+            this.müştəriToolStripMenuItem.Click += new System.EventHandler(this.müştəriToolStripMenuItem_Click);
             // 
             // DashboardForm
             // 
@@ -148,5 +157,6 @@
         private System.Windows.Forms.ToolStripMenuItem müştəriniSilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kitabıSilToolStripMenuItem;
         private System.Windows.Forms.Panel PnlDashboard;
+        private System.Windows.Forms.ToolStripMenuItem müştəriToolStripMenuItem;
     }
 }

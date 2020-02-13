@@ -46,6 +46,19 @@ namespace Library.Forms
             bf.Dock = DockStyle.Fill;
             bf.Show();
         }
+
+        private void müştəriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PnlDashboard.Controls.Clear();
+            PersonForm pf = new PersonForm();
+            pf.TopLevel = false;
+            PnlDashboard.Controls.Add(pf);
+            pf.FormBorderStyle = FormBorderStyle.None;
+            pf.Dock = DockStyle.Fill;
+            pf.Show();
+        }
+
+        
     }
 }
 
