@@ -124,7 +124,9 @@ namespace Library.Forms
                 _selectedBook.Count = Convert.ToInt32(TxtCount.Text);
                 _selectedBook.Price = Convert.ToInt32(TxtBookPrice.Text);
                 _selectedBook.WriteDate = DtpWriteDate.Value;
-                
+                _selectedBook.Genre.Name = CmbGenre.Text;
+
+
 
                 _context.SaveChanges();
                 DgvBookAdd.Rows.Clear();
@@ -152,7 +154,7 @@ namespace Library.Forms
             TxtBookAuthorFullName.Text = "";
             TxtCount.Text = "";
             TxtBookPrice.Text = "";
-            CmbGenre = null;
+            CmbGenre.Text = "";
 
             BtnDeleteBook.Hide();
             BtnUpdateBook.Hide();
