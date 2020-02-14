@@ -76,20 +76,30 @@ namespace Library.Forms
                 MessageBox.Show("qaqa nagarasan?");
             }
 
-            Order order = new Order
+            try
             {
-                BookId = _selecteBook.Id, 
-                PersonId=_selectedPerson.Id,
-                OrderTime = DateTime.Now,
-                DeadLine = DtpDeadline.Value
+                Order order = new Order
+                {
+                    BookId = _selecteBook.Id, 
+                    PersonId=_selectedPerson.Id,
+                    OrderTime = DateTime.Now,
+                    DeadLine = DtpDeadline.Value
                 
 
-            };
+                }; 
+                
+                _context.Orders.Add(order);
+                _context.SaveChanges();
+                DgvOrder.Rows.Clear();
+                FillOrder();
+               
+            }
+            catch (NullReferenceException)
+            {
 
-            _context.Orders.Add(order);
-            _context.SaveChanges();
-            DgvOrder.Rows.Clear();
-            FillOrder();
+                MessageBox.Show("Məlumatlar seçilməyib");
+            }
+            Reset();
 
         }
 
@@ -102,9 +112,75 @@ namespace Library.Forms
 
         private void DgvPerson_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int id = Convert.ToInt32(DgvPerson.Rows[e.RowIndex].Cells[0].Value.ToString());
+            try
+            {
 
-            _selectedPerson = _context.Persons.Find(id);
+                int id = Convert.ToInt32(DgvPerson.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+                 _selectedPerson = _context.Persons.Find(id);
+            }
+            catch (FormatException)
+            {
+
+                MessageBox.Show("Format təyin edilməyib");
+            }
+            
         }
+
+        private void BtnBookSearch_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TxtSearchBook.Text))
+            {
+                MessageBox.Show("Kitabın adını daxil edin");
+                return;
+            }
+
+            var book = _context.Books
+                                     .Where(b => TxtSearchBook.Text != string.Empty ? b.BookName.Contains(TxtSearchBook.Text) : false)
+                                     .ToList();
+            DgvBooks.Rows.Clear();
+
+            foreach (var item in book)
+            {
+                DgvBooks.Rows.Add(item.Id,
+                                    item.BookName,
+                                  item.AuthorFullName,
+                                  item.Count,
+                                  item.Price);
+            }
+            Reset();
+        }
+
+        private void BtnPersonSearch_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TxtSearchPerson.Text))
+            {
+                MessageBox.Show("Müştərinin adını yazın");
+                    return;
+            }
+
+            var person = _context.Persons
+                                         .Where(p => TxtSearchPerson.Text != string.Empty ? p.Name.Contains(TxtSearchPerson.Text) : false)
+                                         .ToList();
+            DgvPerson.Rows.Clear();
+
+            foreach (var item in person)
+            {
+                DgvPerson.Rows.Add(item.Id, item.Name,
+                                   item.Surname);
+            }
+            Reset();
+        }
+
+        private void Reset()
+        {
+            _selectedPerson = null;
+            _selecteBook = null;
+            DtpDeadline.Text = "";
+            TxtSearchBook.Text = "";
+            TxtSearchPerson.Text = "";
+        }
+
+       
     }
 }

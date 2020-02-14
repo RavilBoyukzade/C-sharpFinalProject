@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnPersonSearch = new System.Windows.Forms.Button();
-            this.TxtSearch = new System.Windows.Forms.TextBox();
+            this.TxtSearchPerson = new System.Windows.Forms.TextBox();
             this.BtnBookSearch = new System.Windows.Forms.Button();
             this.TxtSearchBook = new System.Windows.Forms.TextBox();
             this.DgvPerson = new System.Windows.Forms.DataGridView();
@@ -69,7 +69,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.BtnPersonSearch);
-            this.groupBox1.Controls.Add(this.TxtSearch);
+            this.groupBox1.Controls.Add(this.TxtSearchPerson);
             this.groupBox1.Controls.Add(this.BtnBookSearch);
             this.groupBox1.Controls.Add(this.TxtSearchBook);
             this.groupBox1.Controls.Add(this.DgvPerson);
@@ -135,13 +135,14 @@
             this.BtnPersonSearch.TabIndex = 6;
             this.BtnPersonSearch.Text = "Axtar";
             this.BtnPersonSearch.UseVisualStyleBackColor = true;
+            this.BtnPersonSearch.Click += new System.EventHandler(this.BtnPersonSearch_Click);
             // 
-            // TxtSearch
+            // TxtSearchPerson
             // 
-            this.TxtSearch.Location = new System.Drawing.Point(530, 22);
-            this.TxtSearch.Name = "TxtSearch";
-            this.TxtSearch.Size = new System.Drawing.Size(161, 20);
-            this.TxtSearch.TabIndex = 5;
+            this.TxtSearchPerson.Location = new System.Drawing.Point(530, 22);
+            this.TxtSearchPerson.Name = "TxtSearchPerson";
+            this.TxtSearchPerson.Size = new System.Drawing.Size(161, 20);
+            this.TxtSearchPerson.TabIndex = 5;
             // 
             // BtnBookSearch
             // 
@@ -151,6 +152,7 @@
             this.BtnBookSearch.TabIndex = 4;
             this.BtnBookSearch.Text = "Axtar";
             this.BtnBookSearch.UseVisualStyleBackColor = true;
+            this.BtnBookSearch.Click += new System.EventHandler(this.BtnBookSearch_Click);
             // 
             // TxtSearchBook
             // 
@@ -334,7 +336,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnPersonSearch;
-        private System.Windows.Forms.TextBox TxtSearch;
+        private System.Windows.Forms.TextBox TxtSearchPerson;
         private System.Windows.Forms.Button BtnBookSearch;
         private System.Windows.Forms.TextBox TxtSearchBook;
         private System.Windows.Forms.DataGridView DgvPerson;
