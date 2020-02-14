@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnDeleteOrder = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TxtBookCount = new System.Windows.Forms.TextBox();
             this.BtnAddOrder = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.DtpDeadline = new System.Windows.Forms.DateTimePicker();
@@ -56,9 +59,8 @@
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TxtBookCount = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.BtnDeleteOrder = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.DtpTake = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPerson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBooks)).BeginInit();
@@ -67,6 +69,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.DtpTake);
             this.groupBox1.Controls.Add(this.BtnDeleteOrder);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.TxtBookCount);
@@ -89,6 +93,32 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kitab sifarişi";
+            // 
+            // BtnDeleteOrder
+            // 
+            this.BtnDeleteOrder.Location = new System.Drawing.Point(589, 218);
+            this.BtnDeleteOrder.Name = "BtnDeleteOrder";
+            this.BtnDeleteOrder.Size = new System.Drawing.Size(91, 36);
+            this.BtnDeleteOrder.TabIndex = 14;
+            this.BtnDeleteOrder.Text = "Sil";
+            this.BtnDeleteOrder.UseVisualStyleBackColor = true;
+            this.BtnDeleteOrder.Click += new System.EventHandler(this.BtnDeleteOrder_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 230);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Kitabın Sayı";
+            // 
+            // TxtBookCount
+            // 
+            this.TxtBookCount.Location = new System.Drawing.Point(75, 227);
+            this.TxtBookCount.Name = "TxtBookCount";
+            this.TxtBookCount.Size = new System.Drawing.Size(167, 20);
+            this.TxtBookCount.TabIndex = 12;
             // 
             // BtnAddOrder
             // 
@@ -324,31 +354,21 @@
             this.Column13.Name = "Column13";
             this.Column13.ReadOnly = true;
             // 
-            // TxtBookCount
+            // label5
             // 
-            this.TxtBookCount.Location = new System.Drawing.Point(75, 227);
-            this.TxtBookCount.Name = "TxtBookCount";
-            this.TxtBookCount.Size = new System.Drawing.Size(167, 20);
-            this.TxtBookCount.TabIndex = 12;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(254, 206);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Götürmə tarixi";
             // 
-            // label4
+            // DtpTake
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 230);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Kitabın Sayı";
-            // 
-            // BtnDeleteOrder
-            // 
-            this.BtnDeleteOrder.Location = new System.Drawing.Point(589, 218);
-            this.BtnDeleteOrder.Name = "BtnDeleteOrder";
-            this.BtnDeleteOrder.Size = new System.Drawing.Size(91, 36);
-            this.BtnDeleteOrder.TabIndex = 14;
-            this.BtnDeleteOrder.Text = "Sil";
-            this.BtnDeleteOrder.UseVisualStyleBackColor = true;
-            this.BtnDeleteOrder.Click += new System.EventHandler(this.BtnDeleteOrder_Click);
+            this.DtpTake.Location = new System.Drawing.Point(334, 203);
+            this.DtpTake.Name = "DtpTake";
+            this.DtpTake.Size = new System.Drawing.Size(207, 20);
+            this.DtpTake.TabIndex = 15;
             // 
             // OrderForm
             // 
@@ -400,5 +420,7 @@
         private System.Windows.Forms.TextBox TxtBookCount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BtnDeleteOrder;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker DtpTake;
     }
 }

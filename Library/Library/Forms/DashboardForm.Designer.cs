@@ -47,7 +47,7 @@
             this.kitabTəhviliToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(793, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(799, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -64,21 +64,21 @@
             // istifadəçiYaratToolStripMenuItem
             // 
             this.istifadəçiYaratToolStripMenuItem.Name = "istifadəçiYaratToolStripMenuItem";
-            this.istifadəçiYaratToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.istifadəçiYaratToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.istifadəçiYaratToolStripMenuItem.Text = "İstifadəçi yarat";
             this.istifadəçiYaratToolStripMenuItem.Click += new System.EventHandler(this.istifadəçiYaratToolStripMenuItem_Click);
             // 
             // kitabYaratToolStripMenuItem
             // 
             this.kitabYaratToolStripMenuItem.Name = "kitabYaratToolStripMenuItem";
-            this.kitabYaratToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kitabYaratToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.kitabYaratToolStripMenuItem.Text = "Kitab yarat";
             this.kitabYaratToolStripMenuItem.Click += new System.EventHandler(this.kitabYaratToolStripMenuItem_Click);
             // 
             // müştəriYaratToolStripMenuItem
             // 
             this.müştəriYaratToolStripMenuItem.Name = "müştəriYaratToolStripMenuItem";
-            this.müştəriYaratToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.müştəriYaratToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.müştəriYaratToolStripMenuItem.Text = "Müştəri yarat";
             this.müştəriYaratToolStripMenuItem.Click += new System.EventHandler(this.müştəriYaratToolStripMenuItem_Click);
             // 
@@ -100,14 +100,14 @@
             this.PnlDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlDashboard.Location = new System.Drawing.Point(0, 24);
             this.PnlDashboard.Name = "PnlDashboard";
-            this.PnlDashboard.Size = new System.Drawing.Size(793, 470);
+            this.PnlDashboard.Size = new System.Drawing.Size(799, 470);
             this.PnlDashboard.TabIndex = 1;
             // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 494);
+            this.ClientSize = new System.Drawing.Size(799, 494);
             this.Controls.Add(this.PnlDashboard);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

@@ -31,16 +31,23 @@ namespace Library.Forms
 
         private void FillBooks()
         {
+
             var ShowBooks = _context.Books.ToList();
 
             foreach (var item in ShowBooks)
             {
-                DgvBooks.Rows.Add(item.Id,
-                                   item.BookName,
-                                   item.AuthorFullName,
-                                   item.Count,
-                                   item.Price);
+                
+                    DgvBooks.Rows.Add(item.Id,
+                                      item.BookName,
+                                      item.AuthorFullName,
+                                      item.Count,
+                                      item.Price);
+
+                
+                
             }
+
+           
         }
 
         private void FillPerson()
@@ -65,7 +72,7 @@ namespace Library.Forms
                                   item.Person.Surname,
                                   item.Book.BookName,
                                   item.Count,
-                                  DateTime.Now.ToString("MM.dd.yyyy"),
+                                  item.OrderTime.ToString("MM.dd.yyyy"),
                                   item.DeadLine.ToString("MM.dd.yyyy")
                                   );
             }
@@ -73,37 +80,44 @@ namespace Library.Forms
 
         private void BtnAddOrder_Click(object sender, EventArgs e)
         {
-
-            if(DtpDeadline.Value == DateTime.Now)
+           
+            if(DtpDeadline.Value > DtpTake.Value)
             {
-                MessageBox.Show("qaqa nagarasan?");
-            }
-
-            try
-            {
-                Order order = new Order
+                try
                 {
-                    BookId = _selecteBook.Id,
-                    PersonId = _selectedPerson.Id,
-                    Count= Convert.ToInt32(TxtBookCount.Text),
-                    OrderTime = DateTime.Now,
-                    DeadLine = DtpDeadline.Value
-                
+                    Order order = new Order
+                    {
+                        BookId = _selecteBook.Id,
+                        PersonId = _selectedPerson.Id,
+                        Count = Convert.ToInt32(TxtBookCount.Text),
+                        OrderTime = DtpTake.Value,
+                        DeadLine = DtpDeadline.Value
+                    };
 
-                };
-                _context.Orders.Add(order);
-                _context.SaveChanges();
-                DgvOrder.Rows.Clear();
-                FillOrder();
+                    _context.Orders.Add(order);
+                    _selecteBook.Count -= Convert.ToInt32(TxtBookCount.Text);
+                    _context.SaveChanges();
+                    DgvOrder.Rows.Clear();
+                    DgvBooks.Rows.Clear();
+                    FillBooks();
+                    FillOrder();
 
-               
+
+                }
+                catch (NullReferenceException)
+                {
+
+                    MessageBox.Show("Məlumatlar seçilməyib");
+                }
+                Reset();
             }
-            catch (NullReferenceException)
+            else
             {
-
-                MessageBox.Show("Məlumatlar seçilməyib");
+                MessageBox.Show("no");
             }
-            Reset();
+
+            
+         
 
         }
 
@@ -112,7 +126,9 @@ namespace Library.Forms
             int id = Convert.ToInt32(DgvBooks.Rows[e.RowIndex].Cells[0].Value.ToString());
 
             _selecteBook = _context.Books.Find(id);
-            int bk = _selecteBook.Count;
+
+            
+               
         }
 
         private void DgvPerson_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -156,7 +172,7 @@ namespace Library.Forms
             foreach (var item in book)
             {
                 DgvBooks.Rows.Add(item.Id,
-                                    item.BookName,
+                                  item.BookName,
                                   item.AuthorFullName,
                                   item.Count,
                                   item.Price);
@@ -203,7 +219,10 @@ namespace Library.Forms
                 _context.Orders.Remove(_selectedOrder);
                 _context.SaveChanges();
                 DgvOrder.Rows.Clear();
+                DgvBooks.Rows.Clear();
+                FillBooks();
                 FillOrder();
+                
 
             }
             Reset();

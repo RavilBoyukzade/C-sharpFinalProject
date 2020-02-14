@@ -81,6 +81,12 @@
     <Compile Include="Forms\PersonForm.Designer.cs">
       <DependentUpon>PersonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReturnOrderedBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReturnOrderedBookForm.Designer.cs">
+      <DependentUpon>ReturnOrderedBookForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,10 @@
     <Compile Include="Migrations\202002141128289_AddCountToOrderTable.designer.cs">
       <DependentUpon>202002141128289_AddCountToOrderTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002141742228_ChangeOrderTimeValue.cs" />
+    <Compile Include="Migrations\202002141742228_ChangeOrderTimeValue.designer.cs">
+      <DependentUpon>202002141742228_ChangeOrderTimeValue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -140,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PersonForm.resx">
       <DependentUpon>PersonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReturnOrderedBookForm.resx">
+      <DependentUpon>ReturnOrderedBookForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
@@ -167,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002141128289_AddCountToOrderTable.resx">
       <DependentUpon>202002141128289_AddCountToOrderTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002141742228_ChangeOrderTimeValue.resx">
+      <DependentUpon>202002141742228_ChangeOrderTimeValue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
