@@ -18,6 +18,7 @@ namespace Library.Forms
         private readonly LibraryDbContext _context;
         private Book _selecteBook;
         private Person _selectedPerson;
+        private Order _selectedOrder;
         public OrderForm()
         {
             _context = new LibraryDbContext();
@@ -63,6 +64,7 @@ namespace Library.Forms
                                   item.Person.Name,
                                   item.Person.Surname,
                                   item.Book.BookName,
+                                  item.Count,
                                   DateTime.Now.ToString("MM.dd.yyyy"),
                                   item.DeadLine.ToString("MM.dd.yyyy")
                                   );
@@ -71,6 +73,7 @@ namespace Library.Forms
 
         private void BtnAddOrder_Click(object sender, EventArgs e)
         {
+
             if(DtpDeadline.Value == DateTime.Now)
             {
                 MessageBox.Show("qaqa nagarasan?");
@@ -80,18 +83,19 @@ namespace Library.Forms
             {
                 Order order = new Order
                 {
-                    BookId = _selecteBook.Id, 
-                    PersonId=_selectedPerson.Id,
+                    BookId = _selecteBook.Id,
+                    PersonId = _selectedPerson.Id,
+                    Count= Convert.ToInt32(TxtBookCount.Text),
                     OrderTime = DateTime.Now,
                     DeadLine = DtpDeadline.Value
                 
 
-                }; 
-                
+                };
                 _context.Orders.Add(order);
                 _context.SaveChanges();
                 DgvOrder.Rows.Clear();
                 FillOrder();
+
                
             }
             catch (NullReferenceException)
@@ -108,6 +112,7 @@ namespace Library.Forms
             int id = Convert.ToInt32(DgvBooks.Rows[e.RowIndex].Cells[0].Value.ToString());
 
             _selecteBook = _context.Books.Find(id);
+            int bk = _selecteBook.Count;
         }
 
         private void DgvPerson_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -125,6 +130,14 @@ namespace Library.Forms
                 MessageBox.Show("Format təyin edilməyib");
             }
             
+        }
+
+        private void DgvOrder_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int id = Convert.ToInt32(DgvOrder.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+            _selectedOrder = _context.Orders.Find(id);
+
         }
 
         private void BtnBookSearch_Click(object sender, EventArgs e)
@@ -179,6 +192,21 @@ namespace Library.Forms
             DtpDeadline.Text = "";
             TxtSearchBook.Text = "";
             TxtSearchPerson.Text = "";
+            TxtBookCount.Text = "";
+        }
+
+        private void BtnDeleteOrder_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Əminsiniz mi silməyə?", "Silmək?", MessageBoxButtons.YesNo);
+            if (r == DialogResult.Yes)
+            {
+                _context.Orders.Remove(_selectedOrder);
+                _context.SaveChanges();
+                DgvOrder.Rows.Clear();
+                FillOrder();
+
+            }
+            Reset();
         }
 
        

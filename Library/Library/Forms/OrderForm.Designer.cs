@@ -53,8 +53,12 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TxtBookCount = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.BtnDeleteOrder = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPerson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBooks)).BeginInit();
@@ -63,6 +67,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BtnDeleteOrder);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.TxtBookCount);
             this.groupBox1.Controls.Add(this.BtnAddOrder);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.DtpDeadline);
@@ -85,9 +92,9 @@
             // 
             // BtnAddOrder
             // 
-            this.BtnAddOrder.Location = new System.Drawing.Point(643, 218);
+            this.BtnAddOrder.Location = new System.Drawing.Point(697, 218);
             this.BtnAddOrder.Name = "BtnAddOrder";
-            this.BtnAddOrder.Size = new System.Drawing.Size(145, 36);
+            this.BtnAddOrder.Size = new System.Drawing.Size(91, 36);
             this.BtnAddOrder.TabIndex = 11;
             this.BtnAddOrder.Text = "Sifarişi yarat";
             this.BtnAddOrder.UseVisualStyleBackColor = true;
@@ -96,7 +103,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(82, 229);
+            this.label3.Location = new System.Drawing.Point(254, 230);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 10;
@@ -104,7 +111,7 @@
             // 
             // DtpDeadline
             // 
-            this.DtpDeadline.Location = new System.Drawing.Point(162, 226);
+            this.DtpDeadline.Location = new System.Drawing.Point(334, 227);
             this.DtpDeadline.Name = "DtpDeadline";
             this.DtpDeadline.Size = new System.Drawing.Size(207, 20);
             this.DtpDeadline.TabIndex = 9;
@@ -264,6 +271,7 @@
             this.Column9,
             this.Column10,
             this.Column11,
+            this.Column14,
             this.Column12,
             this.Column13});
             this.DgvOrder.Location = new System.Drawing.Point(1, 260);
@@ -271,6 +279,7 @@
             this.DgvOrder.ReadOnly = true;
             this.DgvOrder.Size = new System.Drawing.Size(799, 190);
             this.DgvOrder.TabIndex = 0;
+            this.DgvOrder.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvOrder_RowHeaderMouseClick);
             // 
             // Column8
             // 
@@ -297,6 +306,12 @@
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
             // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "Kitab sayı";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            // 
             // Column12
             // 
             this.Column12.HeaderText = "Götürmə tarixi";
@@ -308,6 +323,32 @@
             this.Column13.HeaderText = "Qaytarma tarixi";
             this.Column13.Name = "Column13";
             this.Column13.ReadOnly = true;
+            // 
+            // TxtBookCount
+            // 
+            this.TxtBookCount.Location = new System.Drawing.Point(75, 227);
+            this.TxtBookCount.Name = "TxtBookCount";
+            this.TxtBookCount.Size = new System.Drawing.Size(167, 20);
+            this.TxtBookCount.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 230);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Kitabın Sayı";
+            // 
+            // BtnDeleteOrder
+            // 
+            this.BtnDeleteOrder.Location = new System.Drawing.Point(589, 218);
+            this.BtnDeleteOrder.Name = "BtnDeleteOrder";
+            this.BtnDeleteOrder.Size = new System.Drawing.Size(91, 36);
+            this.BtnDeleteOrder.TabIndex = 14;
+            this.BtnDeleteOrder.Text = "Sil";
+            this.BtnDeleteOrder.UseVisualStyleBackColor = true;
+            this.BtnDeleteOrder.Click += new System.EventHandler(this.BtnDeleteOrder_Click);
             // 
             // OrderForm
             // 
@@ -353,7 +394,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.TextBox TxtBookCount;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button BtnDeleteOrder;
     }
 }

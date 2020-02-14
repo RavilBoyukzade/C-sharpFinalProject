@@ -17,6 +17,8 @@ namespace Library.Models
         [Required]
         [ForeignKey("Book")]
         public int BookId { get; set; }
+        [Required]
+        public int Count { get; set; }
         [Column(TypeName ="date")]
         public DateTime OrderTime { get; set; }
         [Column(TypeName = "date")]

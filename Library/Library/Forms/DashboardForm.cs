@@ -24,7 +24,9 @@ namespace Library.Forms
 
         }
 
-        private void istifadəçiToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+        private void istifadəçiYaratToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PnlDashboard.Controls.Clear();
             UserForm uf = new UserForm();
@@ -33,12 +35,11 @@ namespace Library.Forms
             uf.FormBorderStyle = FormBorderStyle.None;
             uf.Dock = DockStyle.Fill;
             uf.Show();
-
         }
 
-        private void kitabToolStripMenuItem_Click(object sender, EventArgs e)
+        private void kitabYaratToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PnlDashboard.Controls.Clear();           
+            PnlDashboard.Controls.Clear();
             BookForm bf = new BookForm();
             bf.TopLevel = false;
             PnlDashboard.Controls.Add(bf);
@@ -47,7 +48,7 @@ namespace Library.Forms
             bf.Show();
         }
 
-        private void müştəriToolStripMenuItem_Click(object sender, EventArgs e)
+        private void müştəriYaratToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PnlDashboard.Controls.Clear();
             PersonForm pf = new PersonForm();
@@ -58,7 +59,16 @@ namespace Library.Forms
             pf.Show();
         }
 
-        
+        private void kitabTəhviliToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PnlDashboard.Controls.Clear();
+            OrderForm of = new OrderForm();
+            of.TopLevel = false;
+            PnlDashboard.Controls.Add(of);
+            of.FormBorderStyle = FormBorderStyle.None;
+            of.Dock = DockStyle.Fill;
+            of.Show();
+        }
     }
 }
 
