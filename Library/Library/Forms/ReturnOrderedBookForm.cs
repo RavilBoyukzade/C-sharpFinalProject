@@ -34,7 +34,8 @@ namespace Library.Forms
                                   item.Book.BookName,
                                   item.Count,
                                   item.OrderTime.ToString("dd.MM.yyyy"),
-                                  item.DeadLine.ToString("dd.MM.yyyy")
+                                  item.DeadLine.ToString("dd.MM.yyyy"),
+                                  item.Book.Price
                                   );
             }
         }
@@ -49,7 +50,19 @@ namespace Library.Forms
             TxtDebt.Show();
             TxtLate.Show();
 
-            TxtLate.Text = (_selectedOrder.OrderTime - _selectedOrder.DeadLine).ToString();
+            if(_selectedOrder.DeadLine >= DateTime.Now)
+            {
+                TxtLate.Text = "Gecikmə yoxdu";
+                TxtDebt.Text = "Borc yoxdu";
+            }
+            else
+            {
+                int price = Convert.ToInt32(_selectedOrder.Book.Price);
+                TxtLate.Text = (DateTime.Now - _selectedOrder.DeadLine).ToString("dd");
+                TxtDebt.Text = (Convert.ToInt32(TxtLate.Text) * price * 0.005).ToString();
+            }
+
+            
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
@@ -77,9 +90,15 @@ namespace Library.Forms
                                   item.Book.BookName,
                                   item.Count,
                                   DateTime.Now.ToString("MM.dd.yyyy"),
-                                  item.DeadLine.ToString("MM.dd.yyyy"));
+                                  item.DeadLine.ToString("MM.dd.yyyy"),
+                                  item.Book.Price);
             }
             Reset();
+        }
+
+        private void BtnBookReturn_Click(object sender, EventArgs e)
+        {
+           
         }
 
         private void Reset()
@@ -92,5 +111,7 @@ namespace Library.Forms
             TxtLate.Hide();
 
         }
+
+        
     }
 }

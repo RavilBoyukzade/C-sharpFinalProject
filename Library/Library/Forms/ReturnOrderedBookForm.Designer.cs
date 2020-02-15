@@ -36,6 +36,10 @@
             this.LblDebt = new System.Windows.Forms.Label();
             this.BtnBookReturn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.TxtPersonName = new System.Windows.Forms.TextBox();
+            this.TxtPersonSurname = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.BtnSearch = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,10 +47,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TxtPersonName = new System.Windows.Forms.TextBox();
-            this.TxtPersonSurname = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.BtnSearch = new System.Windows.Forms.Button();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrder)).BeginInit();
             this.SuspendLayout();
@@ -85,7 +86,8 @@
             this.Column4,
             this.Column5,
             this.Column6,
-            this.Column7});
+            this.Column7,
+            this.Column8});
             this.DgvOrder.Location = new System.Drawing.Point(7, 63);
             this.DgvOrder.Name = "DgvOrder";
             this.DgvOrder.ReadOnly = true;
@@ -137,6 +139,7 @@
             this.BtnBookReturn.TabIndex = 5;
             this.BtnBookReturn.Text = "Kitabı qaytar";
             this.BtnBookReturn.UseVisualStyleBackColor = true;
+            this.BtnBookReturn.Click += new System.EventHandler(this.BtnBookReturn_Click);
             // 
             // label1
             // 
@@ -146,6 +149,39 @@
             this.label1.Size = new System.Drawing.Size(22, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Adı";
+            // 
+            // TxtPersonName
+            // 
+            this.TxtPersonName.Location = new System.Drawing.Point(350, 32);
+            this.TxtPersonName.Name = "TxtPersonName";
+            this.TxtPersonName.Size = new System.Drawing.Size(129, 20);
+            this.TxtPersonName.TabIndex = 7;
+            // 
+            // TxtPersonSurname
+            // 
+            this.TxtPersonSurname.Location = new System.Drawing.Point(485, 32);
+            this.TxtPersonSurname.Name = "TxtPersonSurname";
+            this.TxtPersonSurname.Size = new System.Drawing.Size(129, 20);
+            this.TxtPersonSurname.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(482, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Soyadı";
+            // 
+            // BtnSearch
+            // 
+            this.BtnSearch.Location = new System.Drawing.Point(627, 21);
+            this.BtnSearch.Name = "BtnSearch";
+            this.BtnSearch.Size = new System.Drawing.Size(161, 36);
+            this.BtnSearch.TabIndex = 10;
+            this.BtnSearch.Text = "Axtar";
+            this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // Column1
             // 
@@ -190,38 +226,11 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
-            // TxtPersonName
+            // Column8
             // 
-            this.TxtPersonName.Location = new System.Drawing.Point(350, 32);
-            this.TxtPersonName.Name = "TxtPersonName";
-            this.TxtPersonName.Size = new System.Drawing.Size(129, 20);
-            this.TxtPersonName.TabIndex = 7;
-            // 
-            // TxtPersonSurname
-            // 
-            this.TxtPersonSurname.Location = new System.Drawing.Point(485, 32);
-            this.TxtPersonSurname.Name = "TxtPersonSurname";
-            this.TxtPersonSurname.Size = new System.Drawing.Size(129, 20);
-            this.TxtPersonSurname.TabIndex = 9;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(482, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Soyadı";
-            // 
-            // BtnSearch
-            // 
-            this.BtnSearch.Location = new System.Drawing.Point(627, 21);
-            this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(161, 36);
-            this.BtnSearch.TabIndex = 10;
-            this.BtnSearch.Text = "Axtar";
-            this.BtnSearch.UseVisualStyleBackColor = true;
-            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            this.Column8.HeaderText = "Kitabın qiyməti";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // ReturnOrderedBookForm
             // 
@@ -251,6 +260,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtPersonName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -258,6 +268,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.Button BtnSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }
