@@ -55,14 +55,13 @@ namespace Library.Forms
             if(_selectedOrder.DeadLine >= DateTime.Now)
             {
                 TxtLate.Text = "Gecikmə yoxdu";
-                TxtDebt.Text = "Borc yoxdu";
+                TxtDebt.Text = _selectedOrder.Book.Price.ToString() + "₼";
             }
             else
             {
                 int price = Convert.ToInt32(_selectedOrder.Book.Price);
-
                 TxtLate.Text = (DateTime.Now - _selectedOrder.DeadLine).ToString("dd");
-                TxtDebt.Text = (Convert.ToInt32(TxtLate.Text) * price * 0.005* _selectedOrder.Count).ToString();
+                TxtDebt.Text = ((Convert.ToInt32(TxtLate.Text) * price * 0.005* _selectedOrder.Count)+ price).ToString() + "₼";
             }
 
             
@@ -70,7 +69,6 @@ namespace Library.Forms
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-           
 
             if(string.IsNullOrEmpty(TxtPersonName.Text)&&
                string.IsNullOrEmpty(TxtPersonSurname.Text))
@@ -112,6 +110,7 @@ namespace Library.Forms
             DgvOrder.Rows.Clear();
             FillOrders();
             Reset();
+            MessageBox.Show("Kitab qaytarildı");
 
         }
 

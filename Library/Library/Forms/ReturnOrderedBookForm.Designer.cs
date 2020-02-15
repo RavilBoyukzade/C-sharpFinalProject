@@ -128,8 +128,10 @@
             // 
             // TxtDebt
             // 
+            this.TxtDebt.Cursor = System.Windows.Forms.Cursors.No;
             this.TxtDebt.Location = new System.Drawing.Point(356, 406);
             this.TxtDebt.Name = "TxtDebt";
+            this.TxtDebt.ReadOnly = true;
             this.TxtDebt.Size = new System.Drawing.Size(168, 20);
             this.TxtDebt.TabIndex = 4;
             this.TxtDebt.Visible = false;
@@ -146,8 +148,10 @@
             // 
             // TxtLate
             // 
+            this.TxtLate.Cursor = System.Windows.Forms.Cursors.No;
             this.TxtLate.Location = new System.Drawing.Point(91, 406);
             this.TxtLate.Name = "TxtLate";
+            this.TxtLate.ReadOnly = true;
             this.TxtLate.Size = new System.Drawing.Size(168, 20);
             this.TxtLate.TabIndex = 2;
             this.TxtLate.Visible = false;
