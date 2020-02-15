@@ -25,7 +25,7 @@ namespace Library.Forms
 
         private void FillOrders()
         {
-            var ShowOrder = _context.Orders.Include("Book").Include("Person").ToList();
+            var ShowOrder = _context.Orders.Include("Book").Include("Person").Where(o => o.IsReturnd != true).ToList();
             foreach (var item in ShowOrder)
             {
                 DgvOrder.Rows.Add(item.Id,
@@ -42,6 +42,7 @@ namespace Library.Forms
 
         private void DgvOrder_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+          
             int id = Convert.ToInt32(DgvOrder.Rows[e.RowIndex].Cells[0].Value.ToString());
             _selectedOrder = _context.Orders.Find(id);
 
@@ -49,6 +50,7 @@ namespace Library.Forms
             LblLate.Show();
             TxtDebt.Show();
             TxtLate.Show();
+            BtnBookReturn.Show();
 
             if(_selectedOrder.DeadLine >= DateTime.Now)
             {
@@ -58,8 +60,9 @@ namespace Library.Forms
             else
             {
                 int price = Convert.ToInt32(_selectedOrder.Book.Price);
+
                 TxtLate.Text = (DateTime.Now - _selectedOrder.DeadLine).ToString("dd");
-                TxtDebt.Text = (Convert.ToInt32(TxtLate.Text) * price * 0.005).ToString();
+                TxtDebt.Text = (Convert.ToInt32(TxtLate.Text) * price * 0.005* _selectedOrder.Count).ToString();
             }
 
             
@@ -95,10 +98,21 @@ namespace Library.Forms
             }
             Reset();
         }
-
+        
+       
         private void BtnBookReturn_Click(object sender, EventArgs e)
         {
-           
+
+            _selectedOrder.IsReturnd = true;
+            _context.Orders.FirstOrDefault(o => o.Id == _selectedOrder.Id).IsReturnd = _selectedOrder.IsReturnd;
+            var countBook = _context.Books.Where(b => b.Id == _selectedOrder.Book.Id).First().Count;
+            var resultCount = countBook + _selectedOrder.Count;
+            _context.Books.Where(b => b.Id == _selectedOrder.Book.Id).First().Count = resultCount;
+            _context.SaveChanges();
+            DgvOrder.Rows.Clear();
+            FillOrders();
+            Reset();
+
         }
 
         private void Reset()
@@ -109,6 +123,7 @@ namespace Library.Forms
             LblLate.Hide();
             TxtDebt.Hide();
             TxtLate.Hide();
+            BtnBookReturn.Hide();
 
         }
 

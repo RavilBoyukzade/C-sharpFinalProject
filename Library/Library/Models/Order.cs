@@ -24,6 +24,8 @@ namespace Library.Models
         [Column(TypeName = "date")]
         public DateTime DeadLine { get; set; }
 
+        public bool IsReturnd { get; set; }
+
         public Person Person { get; set; }
         public Book Book { get; set; }
     }

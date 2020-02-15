@@ -29,10 +29,20 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TxtBookPrice = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TxtCount = new System.Windows.Forms.TextBox();
             this.BtnUpdateBook = new System.Windows.Forms.Button();
             this.BtnDeleteBook = new System.Windows.Forms.Button();
             this.BtnAddBook = new System.Windows.Forms.Button();
             this.DgvBookAdd = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.CmbGenre = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,16 +52,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TxtBookName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.TxtCount = new System.Windows.Forms.TextBox();
-            this.TxtBookPrice = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBookAdd)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +81,30 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kitabı əlavə et";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // TxtBookPrice
+            // 
+            this.TxtBookPrice.Location = new System.Drawing.Point(547, 60);
+            this.TxtBookPrice.Name = "TxtBookPrice";
+            this.TxtBookPrice.Size = new System.Drawing.Size(169, 20);
+            this.TxtBookPrice.TabIndex = 30;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(500, 63);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Qiyməti";
+            // 
+            // TxtCount
+            // 
+            this.TxtCount.Location = new System.Drawing.Point(305, 60);
+            this.TxtCount.Name = "TxtCount";
+            this.TxtCount.Size = new System.Drawing.Size(169, 20);
+            this.TxtCount.TabIndex = 28;
             // 
             // BtnUpdateBook
             // 
@@ -136,6 +160,49 @@
             this.DgvBookAdd.Size = new System.Drawing.Size(759, 251);
             this.DgvBookAdd.TabIndex = 24;
             this.DgvBookAdd.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvBookAdd_RowHeaderMouseClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Id";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Kitabın adı";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Yazıçı";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Dərc Olunma";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Janrı";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Miqdarı";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Qiyməti";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // label5
             // 
@@ -210,72 +277,6 @@
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 14;
             this.label1.Text = "Kitabın adı";
-            // 
-            // TxtCount
-            // 
-            this.TxtCount.Location = new System.Drawing.Point(305, 60);
-            this.TxtCount.Name = "TxtCount";
-            this.TxtCount.Size = new System.Drawing.Size(169, 20);
-            this.TxtCount.TabIndex = 28;
-            // 
-            // TxtBookPrice
-            // 
-            this.TxtBookPrice.Location = new System.Drawing.Point(547, 60);
-            this.TxtBookPrice.Name = "TxtBookPrice";
-            this.TxtBookPrice.Size = new System.Drawing.Size(169, 20);
-            this.TxtBookPrice.TabIndex = 30;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(500, 63);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Qiyməti";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Id";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Kitabın adı";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Yazıçı";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Dərc Olunma";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Janrı";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Miqdarı";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Qiyməti";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
             // 
             // BookForm
             // 

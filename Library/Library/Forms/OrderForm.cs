@@ -32,7 +32,7 @@ namespace Library.Forms
         private void FillBooks()
         {
 
-            var ShowBooks = _context.Books.ToList();
+            var ShowBooks = _context.Books.Where(b=>b.Count!=0).ToList();
 
             foreach (var item in ShowBooks)
             {
