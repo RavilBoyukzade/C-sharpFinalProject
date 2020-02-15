@@ -69,6 +69,28 @@ namespace Library.Forms
             of.Dock = DockStyle.Fill;
             of.Show();
         }
+
+        private void kitabıQaytarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PnlDashboard.Controls.Clear();
+            ReturnOrderedBookForm robf = new ReturnOrderedBookForm();
+            robf.TopLevel = false;
+            PnlDashboard.Controls.Add(robf);
+            robf.FormBorderStyle = FormBorderStyle.None;
+            robf.Dock = DockStyle.Fill;
+            robf.Show();
+        }
+
+        private void qecikənlərinSiyahisıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PnlDashboard.Controls.Clear();
+            DelayedListForm dlf = new DelayedListForm();
+            dlf.TopLevel = false;
+            PnlDashboard.Controls.Add(dlf);
+            dlf.FormBorderStyle = FormBorderStyle.None;
+            dlf.Dock = DockStyle.Fill;
+            dlf.Show();
+        }
     }
 }
 

@@ -35,6 +35,7 @@
             this.müştəriYaratToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qecikənlərinSiyahisıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kitabTəhviliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kitabıQaytarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PnlDashboard = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +45,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.yeniToolStripMenuItem1,
             this.qecikənlərinSiyahisıToolStripMenuItem,
-            this.kitabTəhviliToolStripMenuItem});
+            this.kitabTəhviliToolStripMenuItem,
+            this.kitabıQaytarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(799, 24);
@@ -87,6 +89,7 @@
             this.qecikənlərinSiyahisıToolStripMenuItem.Name = "qecikənlərinSiyahisıToolStripMenuItem";
             this.qecikənlərinSiyahisıToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
             this.qecikənlərinSiyahisıToolStripMenuItem.Text = "Qecikənlərin siyahisı";
+            this.qecikənlərinSiyahisıToolStripMenuItem.Click += new System.EventHandler(this.qecikənlərinSiyahisıToolStripMenuItem_Click);
             // 
             // kitabTəhviliToolStripMenuItem
             // 
@@ -94,6 +97,13 @@
             this.kitabTəhviliToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.kitabTəhviliToolStripMenuItem.Text = "Kitab təhvili";
             this.kitabTəhviliToolStripMenuItem.Click += new System.EventHandler(this.kitabTəhviliToolStripMenuItem_Click);
+            // 
+            // kitabıQaytarToolStripMenuItem
+            // 
+            this.kitabıQaytarToolStripMenuItem.Name = "kitabıQaytarToolStripMenuItem";
+            this.kitabıQaytarToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.kitabıQaytarToolStripMenuItem.Text = "Kitabı qaytar";
+            this.kitabıQaytarToolStripMenuItem.Click += new System.EventHandler(this.kitabıQaytarToolStripMenuItem_Click);
             // 
             // PnlDashboard
             // 
@@ -130,5 +140,6 @@
         private System.Windows.Forms.ToolStripMenuItem müştəriYaratToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem qecikənlərinSiyahisıToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kitabTəhviliToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kitabıQaytarToolStripMenuItem;
     }
 }
