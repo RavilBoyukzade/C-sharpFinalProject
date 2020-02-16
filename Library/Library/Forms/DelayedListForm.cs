@@ -24,12 +24,12 @@ namespace Library.Forms
             FillDelayedList();
         }
 
-        private void FillDelayedList()
+        private void FillDelayedList()//add delayed users to my datagridview
         {
             var DelayedShow = _context.Orders.
                                               Include("Book").
                                               Include("Person").
-                                              Where(d => d.DeadLine < DateTime.Now).
+                                              Where(d => d.DeadLine < DateTime.Now).//add orders wich less than datetime now
                                               ToList();
             foreach (var item in DelayedShow)
             {

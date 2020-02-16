@@ -25,7 +25,7 @@ namespace Library.Forms
             FillComboBox();
         }
 
-        private void FillBooks()
+        private void FillBooks()//fill boks method to fill it in datagridview
         {
             var ShowBooks = _context.Books.Include("Genre").ToList();
 
@@ -40,7 +40,7 @@ namespace Library.Forms
                                     item.Price);
             }
         }
-        private void FillComboBox()
+        private void FillComboBox()//fill genres method to fill it in combobox
         {
             var ShowGenre = _context.Genres.ToList();
             foreach (var item in ShowGenre)
@@ -53,7 +53,7 @@ namespace Library.Forms
             }
         }
 
-        private void BtnAddBook_Click(object sender, EventArgs e)
+        private void BtnAddBook_Click(object sender, EventArgs e)//add books to database on click
         {            
             ComboBoxItem select = CmbGenre.SelectedItem as ComboBoxItem;
 
@@ -84,27 +84,27 @@ namespace Library.Forms
 
        
 
-        private void DgvBookAdd_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DgvBookAdd_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)//take given parametrs on rowheader click
         {
-            int id = Convert.ToInt32(DgvBookAdd.Rows[e.RowIndex].Cells[0].Value.ToString());
-            _selectedBook = _context.Books.Find(id);
-            TxtBookName.Text = _selectedBook.BookName;
-            TxtBookAuthorFullName.Text = _selectedBook.AuthorFullName;
-            TxtCount.Text = _selectedBook.Count.ToString();
-            TxtBookPrice.Text = _selectedBook.Price.ToString();
-            DtpWriteDate.Text = _selectedBook.WriteDate.ToString();
-            CmbGenre.Text= _selectedBook.Genre.Name;
+            int id = Convert.ToInt32(DgvBookAdd.Rows[e.RowIndex].Cells[0].Value.ToString());//take book id from datagridview
+            _selectedBook = _context.Books.Find(id);//find book id in database
+            TxtBookName.Text = _selectedBook.BookName;//equals selected name to name text box
+            TxtBookAuthorFullName.Text = _selectedBook.AuthorFullName;//equals selected authorname to authirname text box
+            TxtCount.Text = _selectedBook.Count.ToString();//equals selected count to count text box and convert it to string(text)
+            TxtBookPrice.Text = _selectedBook.Price.ToString();//equals selected price to price text box and convert it to string(text)
+            DtpWriteDate.Text = _selectedBook.WriteDate.ToString();//equals selected date to date text box and convert it to string(text)
+            CmbGenre.Text= _selectedBook.Genre.Name;//equals selected genre to genre combobox text 
 
             BtnDeleteBook.Show();
             BtnUpdateBook.Show();
         }
 
-        private void BtnDeleteBook_Click(object sender, EventArgs e)
+        private void BtnDeleteBook_Click(object sender, EventArgs e)//delete books on click
         {
-            DialogResult r = MessageBox.Show("Əminsiniz mi silməyə?", "Silmək?", MessageBoxButtons.YesNo);
-            if (r == DialogResult.Yes)
+            DialogResult r = MessageBox.Show("Əminsiniz mi silməyə?", "Silmək?", MessageBoxButtons.YesNo);//check if user want delete this book
+            if (r == DialogResult.Yes)//if it yes
             {
-                _context.Books.Remove(_selectedBook);
+                _context.Books.Remove(_selectedBook);//delete book contains selected id
                 _context.SaveChanges();
                 DgvBookAdd.Rows.Clear();
                  FillBooks();
@@ -113,18 +113,18 @@ namespace Library.Forms
             Reset();
         }
         
-        private void BtnUpdateBook_Click(object sender, EventArgs e)
+        private void BtnUpdateBook_Click(object sender, EventArgs e)//update books on click
         {
             ComboBoxItem select = CmbGenre.SelectedItem as ComboBoxItem;
-            DialogResult u = MessageBox.Show("Yeniləyim?", "Yenilə?", MessageBoxButtons.YesNo);
+            DialogResult u = MessageBox.Show("Yeniləyim?", "Yenilə?", MessageBoxButtons.YesNo);//check if user want update this book
             if (u == DialogResult.Yes)
             {
-                _selectedBook.BookName = TxtBookName.Text;
-                _selectedBook.AuthorFullName = TxtBookAuthorFullName.Text;
-                _selectedBook.Count = Convert.ToInt32(TxtCount.Text);
-                _selectedBook.Price = Convert.ToInt32(TxtBookPrice.Text);
-                _selectedBook.WriteDate = DtpWriteDate.Value;
-                _selectedBook.Genre.Name = CmbGenre.Text;
+                _selectedBook.BookName = TxtBookName.Text;//equals selected name to name text box
+                _selectedBook.AuthorFullName = TxtBookAuthorFullName.Text;//equals selected authorname to authirname text box
+                _selectedBook.Count = Convert.ToInt32(TxtCount.Text);//equals selected count to count text box and convert it to integer(number)
+                _selectedBook.Price = Convert.ToInt32(TxtBookPrice.Text);//equals selected price to price text box and convert it to integer(number)
+                _selectedBook.WriteDate = DtpWriteDate.Value;//equals selected date to date text box and convert it to datetime(date)
+                _selectedBook.Genre.Name = CmbGenre.Text;//equals selected genre to genre combobox text 
 
 
 
@@ -136,7 +136,7 @@ namespace Library.Forms
             Reset();
         }
 
-        public class ComboBoxItem
+        public class ComboBoxItem // add text and values to combobox
         {
             public string Text { get; set; }
             public int Value { get; set; }
@@ -147,7 +147,7 @@ namespace Library.Forms
             }
         }
 
-        public void Reset()
+        public void Reset()//reset all textboxes and comboox
         {
             _selectedBook = null;
             TxtBookName.Text = "";
@@ -160,9 +160,6 @@ namespace Library.Forms
             BtnUpdateBook.Hide();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

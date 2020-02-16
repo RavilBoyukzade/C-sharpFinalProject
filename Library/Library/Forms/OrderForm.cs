@@ -29,10 +29,10 @@ namespace Library.Forms
             FillOrder();
         }
 
-        private void FillBooks()
+        private void FillBooks()//fill books to book datagrid view from database
         {
 
-            var ShowBooks = _context.Books.Where(b=>b.Count!=0).ToList();
+            var ShowBooks = _context.Books.Where(b=>b.Count!=0).ToList();//fill books which count doesn't equals zerro
 
             foreach (var item in ShowBooks)
             {
@@ -49,7 +49,7 @@ namespace Library.Forms
            
         }
 
-        private void FillPerson()
+        private void FillPerson()//fill persons to person datagrid view from database
         {
             var ShowPerson = _context.Persons.ToList();
             foreach (var item in ShowPerson)
@@ -61,7 +61,7 @@ namespace Library.Forms
             }
         }
 
-        private void FillOrder()
+        private void FillOrder()//fill orders  to order datagrid view with including books and persons values in it
         {
             var ShowOrder = _context.Orders.Include("Book").Include("Person").ToList();
             foreach (var item in ShowOrder)
@@ -77,7 +77,7 @@ namespace Library.Forms
             }
         }
 
-        private void BtnAddOrder_Click(object sender, EventArgs e)
+        private void BtnAddOrder_Click(object sender, EventArgs e)//add orders to order table
         {
            
             if(DtpDeadline.Value > DtpTake.Value)
@@ -94,7 +94,7 @@ namespace Library.Forms
                     };
 
                     _context.Orders.Add(order);
-                    _selecteBook.Count -= Convert.ToInt32(TxtBookCount.Text);
+                    _selecteBook.Count -= Convert.ToInt32(TxtBookCount.Text);//minus selectd books count from dooks table
                     _context.SaveChanges();
                     DgvOrder.Rows.Clear();
                     DgvBooks.Rows.Clear();
@@ -120,7 +120,7 @@ namespace Library.Forms
 
         }
 
-        private void DgvBooks_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DgvBooks_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)//select values from books
         {
             int id = Convert.ToInt32(DgvBooks.Rows[e.RowIndex].Cells[0].Value.ToString());
 
@@ -130,7 +130,7 @@ namespace Library.Forms
                
         }
 
-        private void DgvPerson_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DgvPerson_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)//select person values from person datagridview
         {
             try
             {
@@ -147,7 +147,7 @@ namespace Library.Forms
             
         }
 
-        private void DgvOrder_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DgvOrder_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)//select orders from orders table
         {
             int id = Convert.ToInt32(DgvOrder.Rows[e.RowIndex].Cells[0].Value.ToString());
 
@@ -155,7 +155,7 @@ namespace Library.Forms
 
         }
 
-        private void BtnBookSearch_Click(object sender, EventArgs e)
+        private void BtnBookSearch_Click(object sender, EventArgs e)//search books in book data grid view table
         {
             if (string.IsNullOrEmpty(TxtSearchBook.Text))
             {
@@ -179,7 +179,7 @@ namespace Library.Forms
             Reset();
         }
 
-        private void BtnPersonSearch_Click(object sender, EventArgs e)
+        private void BtnPersonSearch_Click(object sender, EventArgs e)//search perrsons in  person data grid view
         {
             if (string.IsNullOrEmpty(TxtSearchPerson.Text))
             {
@@ -200,7 +200,7 @@ namespace Library.Forms
             Reset();
         }
 
-        private void Reset()
+        private void Reset()//reset all textboxes and selected rows
         {
             _selectedPerson = null;
             _selecteBook = null;
@@ -210,7 +210,7 @@ namespace Library.Forms
             TxtBookCount.Text = "";
         }
 
-        private void BtnDeleteOrder_Click(object sender, EventArgs e)
+        private void BtnDeleteOrder_Click(object sender, EventArgs e)//delete ordered books
         {
             DialogResult r = MessageBox.Show("Əminsiniz mi silməyə?", "Silmək?", MessageBoxButtons.YesNo);
             if (r == DialogResult.Yes)

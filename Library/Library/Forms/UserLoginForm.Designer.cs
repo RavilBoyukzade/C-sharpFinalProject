@@ -50,6 +50,7 @@
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(196, 20);
             this.TxtEmail.TabIndex = 1;
+            this.TxtEmail.Text = "yolchu@code.edu.az";
             // 
             // TxtPassword
             // 
@@ -58,6 +59,7 @@
             this.TxtPassword.PasswordChar = '*';
             this.TxtPassword.Size = new System.Drawing.Size(196, 20);
             this.TxtPassword.TabIndex = 3;
+            this.TxtPassword.Text = "123456";
             // 
             // label2
             // 

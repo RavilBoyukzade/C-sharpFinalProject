@@ -15,19 +15,8 @@ namespace Library.Forms
 {
     public partial class UserLoginForm : Form
     {
-        static string Encrypt(string value)
-        {
 
-            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
-            {
-                UTF8Encoding utf8 = new UTF8Encoding();
-                byte[] data = md5.ComputeHash(utf8.GetBytes(value));
-                return Convert.ToBase64String(data);
-            }
-
-        }
-
-        private readonly LibraryDbContext _context;
+        private readonly LibraryDbContext _context; // Call database connection
 
 
         public UserLoginForm()
@@ -37,32 +26,34 @@ namespace Library.Forms
             InitializeComponent();
         }
 
-        private void BtnLogIn_Click(object sender, EventArgs e)
+        private void BtnLogIn_Click(object sender, EventArgs e)//click on button to login
         {
 
-            if (string.IsNullOrEmpty(TxtEmail.Text))
+            if (string.IsNullOrEmpty(TxtEmail.Text)) //check that is email is null
             {
                 MessageBox.Show("Email unvani daxil edin");
                 return;
             }
 
-            if (string.IsNullOrEmpty(TxtPassword.Text))
+            if (string.IsNullOrEmpty(TxtPassword.Text))// check that password is null
             {
                 MessageBox.Show("Şifrəni Daxil Edin");
                 return;
 
             }
 
-           User user = _context.Users.FirstOrDefault(u => u.Status && u.Email == TxtEmail.Text && u.Password == TxtPassword.Text);
+           User user = _context.Users.FirstOrDefault(u => u.Status && u.Email == TxtEmail.Text && u.Password == TxtPassword.Text); 
               
 
             if(user!=null)
             {
                 
                 DashboardForm dashboard = new DashboardForm();
-                dashboard.Show();
                 this.Hide();
-                               
+                dashboard.Show();
+                
+
+
                 return;
             }
 
@@ -77,6 +68,8 @@ namespace Library.Forms
             {
                 BtnLogIn_Click(BtnLogIn,null);
             }
-        }
+        }//catch enter press key 
+
+      
     }
 }

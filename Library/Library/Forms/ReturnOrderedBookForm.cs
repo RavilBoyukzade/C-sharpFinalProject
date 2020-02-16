@@ -23,7 +23,7 @@ namespace Library.Forms
             FillOrders();
         }
 
-        private void FillOrders()
+        private void FillOrders()//fill orders to order datagrid view from database
         {
             var ShowOrder = _context.Orders.Include("Book").Include("Person").Where(o => o.IsReturnd != true).ToList();
             foreach (var item in ShowOrder)

@@ -23,7 +23,7 @@ namespace Library.Forms
             FillPerson();
         }
 
-        private void FillPerson()
+        private void FillPerson()//fill persons from person table to datagrid view
         {
             var ShowPerson = _context.Persons.ToList();
 
@@ -38,13 +38,13 @@ namespace Library.Forms
             }
         }
 
-        private void BtnAdd_Click(object sender, EventArgs e)
+        private void BtnAdd_Click(object sender, EventArgs e)//add person to database on click
         {
             if(!string.IsNullOrEmpty(TxtPersonName.Text)&&
                !string.IsNullOrEmpty(TxtPersonSurname.Text)&&
                !string.IsNullOrEmpty(TxtPersonPhone.Text)&&
                !string.IsNullOrEmpty(TxtPersonEmail.Text)&&
-               DtpBirthday.Value!=null)
+               DtpBirthday.Value!=null)//if name,surname,phone,email,birthday boxes in not null
             {
                 Person person = new Person
                 {
@@ -68,24 +68,24 @@ namespace Library.Forms
             Reset();
         }
 
-        private void DgvPerson_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DgvPerson_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)//select user id by clicking on datagridview row head
         {
-            int id = Convert.ToInt32(DgvPerson.Rows[e.RowIndex].Cells[0].Value.ToString());
+            int id = Convert.ToInt32(DgvPerson.Rows[e.RowIndex].Cells[0].Value.ToString());//find id of person
 
             _selectedPerson = _context.Persons.Find(id);
 
-            TxtPersonName.Text = _selectedPerson.Name;
-            TxtPersonSurname.Text = _selectedPerson.Surname;
-            TxtPersonPhone.Text = _selectedPerson.PhoneNumber.ToString();
-            TxtPersonEmail.Text = _selectedPerson.Email;
-            DtpBirthday.Text = _selectedPerson.Birthday.ToString();
+            TxtPersonName.Text = _selectedPerson.Name;//equal selected person name to name textbox
+            TxtPersonSurname.Text = _selectedPerson.Surname;//equal selected person surname to surname textbox
+            TxtPersonPhone.Text = _selectedPerson.PhoneNumber.ToString();//equal selected person phone to phone  textbox and convert it to string(text)
+            TxtPersonEmail.Text = _selectedPerson.Email;//equal selected person mail to mail textbox
+            DtpBirthday.Text = _selectedPerson.Birthday.ToString();//equal selected person birthday date to birthday textbox and convert it to string(text)
 
             BtnDelete.Show();
             BtnUpdate.Show();
 
         }
 
-        private void BtnDelete_Click(object sender, EventArgs e)
+        private void BtnDelete_Click(object sender, EventArgs e)//delete persons from database
         {
             DialogResult r = MessageBox.Show("Əminsiniz mi silməyə?", "Silmək?", MessageBoxButtons.YesNo);
             if (r == DialogResult.Yes)
@@ -117,7 +117,7 @@ namespace Library.Forms
             Reset();
         }
 
-        private void Reset()
+        private void Reset()//reset all textboxes
         {
             _selectedPerson = null;
             TxtPersonName.Text = "";

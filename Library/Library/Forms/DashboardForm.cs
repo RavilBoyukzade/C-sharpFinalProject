@@ -17,16 +17,18 @@ namespace Library.Forms
 
     public partial class DashboardForm : Form
     {
+       
         
         public DashboardForm()
         {
             InitializeComponent();
 
+
         }
 
 
 
-        private void istifadəçiYaratToolStripMenuItem_Click(object sender, EventArgs e)
+        private void istifadəçiYaratToolStripMenuItem_Click(object sender, EventArgs e)//open user form in panel
         {
             PnlDashboard.Controls.Clear();
             UserForm uf = new UserForm();
@@ -37,7 +39,7 @@ namespace Library.Forms
             uf.Show();
         }
 
-        private void kitabYaratToolStripMenuItem_Click(object sender, EventArgs e)
+        private void kitabYaratToolStripMenuItem_Click(object sender, EventArgs e)//open Book form in panel
         {
             PnlDashboard.Controls.Clear();
             BookForm bf = new BookForm();
@@ -48,7 +50,7 @@ namespace Library.Forms
             bf.Show();
         }
 
-        private void müştəriYaratToolStripMenuItem_Click(object sender, EventArgs e)
+        private void müştəriYaratToolStripMenuItem_Click(object sender, EventArgs e)//open Person form in panel
         {
             PnlDashboard.Controls.Clear();
             PersonForm pf = new PersonForm();
@@ -59,7 +61,7 @@ namespace Library.Forms
             pf.Show();
         }
 
-        private void kitabTəhviliToolStripMenuItem_Click(object sender, EventArgs e)
+        private void kitabTəhviliToolStripMenuItem_Click(object sender, EventArgs e)//open Order form in panel
         {
             PnlDashboard.Controls.Clear();
             OrderForm of = new OrderForm();
@@ -70,7 +72,7 @@ namespace Library.Forms
             of.Show();
         }
 
-        private void kitabıQaytarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void kitabıQaytarToolStripMenuItem_Click(object sender, EventArgs e)//open ureturn ordered books form in panel
         {
             PnlDashboard.Controls.Clear();
             ReturnOrderedBookForm robf = new ReturnOrderedBookForm();
@@ -81,7 +83,7 @@ namespace Library.Forms
             robf.Show();
         }
 
-        private void qecikənlərinSiyahisıToolStripMenuItem_Click(object sender, EventArgs e)
+        private void qecikənlərinSiyahisıToolStripMenuItem_Click(object sender, EventArgs e)//open Delayed list form in panel
         {
             PnlDashboard.Controls.Clear();
             DelayedListForm dlf = new DelayedListForm();
@@ -92,7 +94,7 @@ namespace Library.Forms
             dlf.Show();
         }
 
-        private void hesabatlarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void hesabatlarToolStripMenuItem_Click(object sender, EventArgs e)//open report form in panel
         {
             PnlDashboard.Controls.Clear();
             ReportForm rf = new ReportForm();
@@ -101,6 +103,11 @@ namespace Library.Forms
             rf.FormBorderStyle = FormBorderStyle.None;
             rf.Dock = DockStyle.Fill;
             rf.Show();
+        }
+        
+        private void DashboardForm_FormClosed(object sender, FormClosedEventArgs e)//close my application
+        {
+            Application.Exit();
         }
     }
 }

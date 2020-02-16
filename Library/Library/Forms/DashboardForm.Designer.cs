@@ -36,8 +36,8 @@
             this.qecikənlərinSiyahisıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kitabTəhviliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kitabıQaytarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PnlDashboard = new System.Windows.Forms.Panel();
             this.hesabatlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PnlDashboard = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,6 +107,13 @@
             this.kitabıQaytarToolStripMenuItem.Text = "Kitabı qaytar";
             this.kitabıQaytarToolStripMenuItem.Click += new System.EventHandler(this.kitabıQaytarToolStripMenuItem_Click);
             // 
+            // hesabatlarToolStripMenuItem
+            // 
+            this.hesabatlarToolStripMenuItem.Name = "hesabatlarToolStripMenuItem";
+            this.hesabatlarToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.hesabatlarToolStripMenuItem.Text = "Hesabatlar";
+            this.hesabatlarToolStripMenuItem.Click += new System.EventHandler(this.hesabatlarToolStripMenuItem_Click);
+            // 
             // PnlDashboard
             // 
             this.PnlDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -114,13 +121,6 @@
             this.PnlDashboard.Name = "PnlDashboard";
             this.PnlDashboard.Size = new System.Drawing.Size(799, 470);
             this.PnlDashboard.TabIndex = 1;
-            // 
-            // hesabatlarToolStripMenuItem
-            // 
-            this.hesabatlarToolStripMenuItem.Name = "hesabatlarToolStripMenuItem";
-            this.hesabatlarToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.hesabatlarToolStripMenuItem.Text = "Hesabatlar";
-            this.hesabatlarToolStripMenuItem.Click += new System.EventHandler(this.hesabatlarToolStripMenuItem_Click);
             // 
             // DashboardForm
             // 
@@ -132,6 +132,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "DashboardForm";
             this.Text = "DashboardForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DashboardForm_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

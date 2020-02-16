@@ -26,12 +26,12 @@ namespace Library.Forms
 
         }
 
-        private void FillOrderReport()
+        private void FillOrderReport()//fill orders whch retun books and return status equals to true
         {
             var ShowReport = _context.Orders
                                             .Include("Book")
                                             .Include("Person")
-                                            .Where(r => r.IsReturnd != false)
+                                            //.Where(r => r.IsReturnd != false)
                                             .ToList();
 
             foreach (var item in ShowReport)
@@ -48,11 +48,11 @@ namespace Library.Forms
             }
         }
 
-        private void BtnSearch_Click(object sender, EventArgs e)
+        private void BtnSearch_Click(object sender, EventArgs e)//search orders between two dates
         {
 
-            var StartDate = DtpFrom.Value.Date;
-            var EndaDate = DtpTo.Value.Date;
+            var StartDate = DtpFrom.Value.Date;//start search point
+            var EndaDate = DtpTo.Value.Date;//end search point
             DgvReportOrders.Rows.Clear();
             var ShowReport = _context.Orders
                                             .Include("Book")
@@ -78,7 +78,7 @@ namespace Library.Forms
 
         }
 
-        private void BtnExport_Click(object sender, EventArgs e)
+        private void BtnExport_Click(object sender, EventArgs e)//export datas to excell
         {
             if(DgvReportOrders.Rows.Count > 0)
             {
