@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.DgvReportOrders = new System.Windows.Forms.DataGridView();
-            this.DtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.DtpTo = new System.Windows.Forms.DateTimePicker();
-            this.BtnSearch = new System.Windows.Forms.Button();
-            this.BtnExport = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BtnExport = new System.Windows.Forms.Button();
+            this.BtnSearch = new System.Windows.Forms.Button();
+            this.DtpTo = new System.Windows.Forms.DateTimePicker();
+            this.DtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.DgvReportOrders = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +66,60 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hesabat";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(490, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Hansı tarixə dək";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(294, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Hansı tarixdən";
+            // 
+            // BtnExport
+            // 
+            this.BtnExport.Location = new System.Drawing.Point(11, 19);
+            this.BtnExport.Name = "BtnExport";
+            this.BtnExport.Size = new System.Drawing.Size(106, 37);
+            this.BtnExport.TabIndex = 4;
+            this.BtnExport.Text = "Export";
+            this.BtnExport.UseVisualStyleBackColor = true;
+            this.BtnExport.Click += new System.EventHandler(this.BtnExport_Click);
+            // 
+            // BtnSearch
+            // 
+            this.BtnSearch.Location = new System.Drawing.Point(682, 20);
+            this.BtnSearch.Name = "BtnSearch";
+            this.BtnSearch.Size = new System.Drawing.Size(106, 37);
+            this.BtnSearch.TabIndex = 3;
+            this.BtnSearch.Text = "Axtar";
+            this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // DtpTo
+            // 
+            this.DtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpTo.Location = new System.Drawing.Point(576, 29);
+            this.DtpTo.Name = "DtpTo";
+            this.DtpTo.Size = new System.Drawing.Size(100, 20);
+            this.DtpTo.TabIndex = 2;
+            // 
+            // DtpFrom
+            // 
+            this.DtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFrom.Location = new System.Drawing.Point(373, 29);
+            this.DtpFrom.Name = "DtpFrom";
+            this.DtpFrom.Size = new System.Drawing.Size(96, 20);
+            this.DtpFrom.TabIndex = 1;
+            // 
             // DgvReportOrders
             // 
             this.DgvReportOrders.AllowUserToAddRows = false;
@@ -87,59 +141,6 @@
             this.DgvReportOrders.ReadOnly = true;
             this.DgvReportOrders.Size = new System.Drawing.Size(800, 380);
             this.DgvReportOrders.TabIndex = 0;
-            // 
-            // DtpFrom
-            // 
-            this.DtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpFrom.Location = new System.Drawing.Point(373, 29);
-            this.DtpFrom.Name = "DtpFrom";
-            this.DtpFrom.Size = new System.Drawing.Size(96, 20);
-            this.DtpFrom.TabIndex = 1;
-            // 
-            // DtpTo
-            // 
-            this.DtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpTo.Location = new System.Drawing.Point(576, 29);
-            this.DtpTo.Name = "DtpTo";
-            this.DtpTo.Size = new System.Drawing.Size(100, 20);
-            this.DtpTo.TabIndex = 2;
-            // 
-            // BtnSearch
-            // 
-            this.BtnSearch.Location = new System.Drawing.Point(682, 20);
-            this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(106, 37);
-            this.BtnSearch.TabIndex = 3;
-            this.BtnSearch.Text = "Axtar";
-            this.BtnSearch.UseVisualStyleBackColor = true;
-            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
-            // 
-            // BtnExport
-            // 
-            this.BtnExport.Location = new System.Drawing.Point(11, 19);
-            this.BtnExport.Name = "BtnExport";
-            this.BtnExport.Size = new System.Drawing.Size(106, 37);
-            this.BtnExport.TabIndex = 4;
-            this.BtnExport.Text = "Export";
-            this.BtnExport.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(294, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Hansı tarixdən";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(490, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Hansı tarixə dək";
             // 
             // Column1
             // 
