@@ -37,6 +37,7 @@
             this.kitabTəhviliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kitabıQaytarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PnlDashboard = new System.Windows.Forms.Panel();
+            this.hesabatlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +47,8 @@
             this.yeniToolStripMenuItem1,
             this.qecikənlərinSiyahisıToolStripMenuItem,
             this.kitabTəhviliToolStripMenuItem,
-            this.kitabıQaytarToolStripMenuItem});
+            this.kitabıQaytarToolStripMenuItem,
+            this.hesabatlarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(799, 24);
@@ -113,6 +115,13 @@
             this.PnlDashboard.Size = new System.Drawing.Size(799, 470);
             this.PnlDashboard.TabIndex = 1;
             // 
+            // hesabatlarToolStripMenuItem
+            // 
+            this.hesabatlarToolStripMenuItem.Name = "hesabatlarToolStripMenuItem";
+            this.hesabatlarToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.hesabatlarToolStripMenuItem.Text = "Hesabatlar";
+            this.hesabatlarToolStripMenuItem.Click += new System.EventHandler(this.hesabatlarToolStripMenuItem_Click);
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,5 +150,6 @@
         private System.Windows.Forms.ToolStripMenuItem qecikənlərinSiyahisıToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kitabTəhviliToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kitabıQaytarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hesabatlarToolStripMenuItem;
     }
 }

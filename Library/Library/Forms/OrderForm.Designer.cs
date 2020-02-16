@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.DtpTake = new System.Windows.Forms.DateTimePicker();
             this.BtnDeleteOrder = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.TxtBookCount = new System.Windows.Forms.TextBox();
@@ -59,8 +61,6 @@
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label5 = new System.Windows.Forms.Label();
-            this.DtpTake = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPerson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBooks)).BeginInit();
@@ -93,6 +93,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kitab sifarişi";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(254, 206);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Götürmə tarixi";
+            // 
+            // DtpTake
+            // 
+            this.DtpTake.Location = new System.Drawing.Point(334, 203);
+            this.DtpTake.Name = "DtpTake";
+            this.DtpTake.Size = new System.Drawing.Size(207, 20);
+            this.DtpTake.TabIndex = 15;
             // 
             // BtnDeleteOrder
             // 
@@ -213,6 +229,7 @@
             this.DgvPerson.Location = new System.Drawing.Point(455, 47);
             this.DgvPerson.Name = "DgvPerson";
             this.DgvPerson.ReadOnly = true;
+            this.DgvPerson.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvPerson.Size = new System.Drawing.Size(333, 150);
             this.DgvPerson.TabIndex = 2;
             this.DgvPerson.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvPerson_RowHeaderMouseClick);
@@ -353,22 +370,6 @@
             this.Column13.HeaderText = "Qaytarma tarixi";
             this.Column13.Name = "Column13";
             this.Column13.ReadOnly = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(254, 206);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 13);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Götürmə tarixi";
-            // 
-            // DtpTake
-            // 
-            this.DtpTake.Location = new System.Drawing.Point(334, 203);
-            this.DtpTake.Name = "DtpTake";
-            this.DtpTake.Size = new System.Drawing.Size(207, 20);
-            this.DtpTake.TabIndex = 15;
             // 
             // OrderForm
             // 

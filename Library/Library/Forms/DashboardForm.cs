@@ -91,6 +91,17 @@ namespace Library.Forms
             dlf.Dock = DockStyle.Fill;
             dlf.Show();
         }
+
+        private void hesabatlarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PnlDashboard.Controls.Clear();
+            ReportForm rf = new ReportForm();
+            rf.TopLevel = false;
+            PnlDashboard.Controls.Add(rf);
+            rf.FormBorderStyle = FormBorderStyle.None;
+            rf.Dock = DockStyle.Fill;
+            rf.Show();
+        }
     }
 }
 

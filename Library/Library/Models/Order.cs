@@ -25,6 +25,10 @@ namespace Library.Models
         public DateTime DeadLine { get; set; }
 
         public bool IsReturnd { get; set; }
+       
+        public string ReturnPrice { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime ReturnTime { get; set; }
 
         public Person Person { get; set; }
         public Book Book { get; set; }

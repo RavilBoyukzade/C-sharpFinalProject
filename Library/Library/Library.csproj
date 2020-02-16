@@ -87,6 +87,12 @@
     <Compile Include="Forms\PersonForm.Designer.cs">
       <DependentUpon>PersonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ReturnOrderedBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,18 @@
     <Compile Include="Migrations\202002151156271_initial.designer.cs">
       <DependentUpon>202002151156271_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002160703048_AddReturnPriceToOrderTable.cs" />
+    <Compile Include="Migrations\202002160703048_AddReturnPriceToOrderTable.designer.cs">
+      <DependentUpon>202002160703048_AddReturnPriceToOrderTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002160711046_ChangeTypeOfReturnPriceFromDooubleToString.cs" />
+    <Compile Include="Migrations\202002160711046_ChangeTypeOfReturnPriceFromDooubleToString.designer.cs">
+      <DependentUpon>202002160711046_ChangeTypeOfReturnPriceFromDooubleToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002160833029_AdReturnTimeToOrderTable.cs" />
+    <Compile Include="Migrations\202002160833029_AdReturnTimeToOrderTable.designer.cs">
+      <DependentUpon>202002160833029_AdReturnTimeToOrderTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -163,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PersonForm.resx">
       <DependentUpon>PersonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReturnOrderedBookForm.resx">
       <DependentUpon>ReturnOrderedBookForm.cs</DependentUpon>
@@ -199,6 +220,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002151156271_initial.resx">
       <DependentUpon>202002151156271_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002160703048_AddReturnPriceToOrderTable.resx">
+      <DependentUpon>202002160703048_AddReturnPriceToOrderTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002160711046_ChangeTypeOfReturnPriceFromDooubleToString.resx">
+      <DependentUpon>202002160711046_ChangeTypeOfReturnPriceFromDooubleToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002160833029_AdReturnTimeToOrderTable.resx">
+      <DependentUpon>202002160833029_AdReturnTimeToOrderTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -102,6 +102,10 @@ namespace Library.Forms
         {
 
             _selectedOrder.IsReturnd = true;
+            _selectedOrder.ReturnPrice = TxtDebt.Text;
+            _selectedOrder.ReturnTime = DateTime.Now;
+            _context.Orders.FirstOrDefault(d => d.Id == _selectedOrder.Id).ReturnTime = _selectedOrder.ReturnTime;
+            _context.Orders.FirstOrDefault(r => r.Id == _selectedOrder.Id).ReturnPrice = _selectedOrder.ReturnPrice;
             _context.Orders.FirstOrDefault(o => o.Id == _selectedOrder.Id).IsReturnd = _selectedOrder.IsReturnd;
             var countBook = _context.Books.Where(b => b.Id == _selectedOrder.Book.Id).First().Count;
             var resultCount = countBook + _selectedOrder.Count;
