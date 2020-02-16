@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.yeniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.istifadəçiYaratToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -129,9 +130,10 @@
             this.ClientSize = new System.Drawing.Size(799, 494);
             this.Controls.Add(this.PnlDashboard);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "DashboardForm";
-            this.Text = "DashboardForm";
+            this.Text = "Kitabxana";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DashboardForm_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

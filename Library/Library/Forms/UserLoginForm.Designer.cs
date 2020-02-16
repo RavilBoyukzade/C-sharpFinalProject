@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserLoginForm));
             this.label1 = new System.Windows.Forms.Label();
             this.TxtEmail = new System.Windows.Forms.TextBox();
             this.TxtPassword = new System.Windows.Forms.TextBox();
@@ -90,6 +91,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TxtEmail);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
