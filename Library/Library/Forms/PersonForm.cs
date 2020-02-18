@@ -40,32 +40,40 @@ namespace Library.Forms
 
         private void BtnAdd_Click(object sender, EventArgs e)//add person to database on click
         {
-            if(!string.IsNullOrEmpty(TxtPersonName.Text)&&
-               !string.IsNullOrEmpty(TxtPersonSurname.Text)&&
-               !string.IsNullOrEmpty(TxtPersonPhone.Text)&&
-               !string.IsNullOrEmpty(TxtPersonEmail.Text)&&
-               DtpBirthday.Value!=null)//if name,surname,phone,email,birthday boxes in not null
+            try
             {
-                Person person = new Person
+                if (!string.IsNullOrEmpty(TxtPersonName.Text) &&
+               !string.IsNullOrEmpty(TxtPersonSurname.Text) &&
+               !string.IsNullOrEmpty(TxtPersonPhone.Text) &&
+               !string.IsNullOrEmpty(TxtPersonEmail.Text) &&
+               DtpBirthday.Value != null)//if name,surname,phone,email,birthday boxes in not null
                 {
-                    Name = TxtPersonName.Text,
-                    Surname = TxtPersonSurname.Text,
-                    PhoneNumber = Convert.ToInt32(TxtPersonPhone.Text),
-                    Email = TxtPersonEmail.Text,
-                    Birthday = DtpBirthday.Value
-                };
+                    Person person = new Person
+                    {
+                        Name = TxtPersonName.Text,
+                        Surname = TxtPersonSurname.Text,
+                        PhoneNumber = Convert.ToInt32(TxtPersonPhone.Text),
+                        Email = TxtPersonEmail.Text,
+                        Birthday = DtpBirthday.Value
+                    };
 
-                _context.Persons.Add(person);
-                _context.SaveChanges();
+                    _context.Persons.Add(person);
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Xanaları doldurun");
+                }
+
+                DgvPerson.Rows.Clear();
+                FillPerson();
+                Reset();
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Xanaları doldurun");
+
+                MessageBox.Show("Nömrə yazılışı 501234567");
             }
-           
-            DgvPerson.Rows.Clear();
-            FillPerson();
-            Reset();
         }
 
         private void DgvPerson_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)//select user id by clicking on datagridview row head

@@ -80,7 +80,7 @@ namespace Library.Forms
         private void BtnAddOrder_Click(object sender, EventArgs e)//add orders to order table
         {
            
-            if(DtpDeadline.Value > DtpTake.Value)
+            if(DtpDeadline.Value > DtpTake.Value && Convert.ToInt32(TxtBookCount.Text)<_selecteBook.Count)
             {
                 try
                 {
@@ -112,7 +112,7 @@ namespace Library.Forms
             }
             else
             {
-                MessageBox.Show("no");
+                MessageBox.Show("Tarix və ya kitab sayı düz seçilməyib");
             }
 
             
